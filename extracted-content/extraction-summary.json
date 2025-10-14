@@ -1,0 +1,387 @@
+{
+  "extraction_date": "2025-10-12",
+  "total_posts": 442,
+  "pages": {
+    "count": 36,
+    "list": [
+      {
+        "ID": "7",
+        "title": "Home",
+        "slug": "home",
+        "has_content": true
+      },
+      {
+        "ID": "87",
+        "title": "Our Doctors & Staff",
+        "slug": "our-doctors-staff",
+        "has_content": true
+      },
+      {
+        "ID": "289",
+        "title": "After Your Visit",
+        "slug": "after-your-visit",
+        "has_content": true
+      },
+      {
+        "ID": "308",
+        "title": "Prepare for Your Visit",
+        "slug": "prepare-for-your-visit",
+        "has_content": true
+      },
+      {
+        "ID": "328",
+        "title": "Locations",
+        "slug": "locations",
+        "has_content": true
+      },
+      {
+        "ID": "344",
+        "title": "Contact",
+        "slug": "contact",
+        "has_content": true
+      },
+      {
+        "ID": "405",
+        "title": "Request an appointment",
+        "slug": "request-an-appointment",
+        "has_content": true
+      },
+      {
+        "ID": "406",
+        "title": "Refer Patient",
+        "slug": "refer-patient",
+        "has_content": true
+      },
+      {
+        "ID": "407",
+        "title": "Before Mohs Surgery",
+        "slug": "before-mohs-surgery",
+        "has_content": true
+      },
+      {
+        "ID": "408",
+        "title": "Service Name",
+        "slug": "service-name",
+        "has_content": true
+      },
+      {
+        "ID": "678",
+        "title": "Skin Biopsies",
+        "slug": "skin-biopsies",
+        "has_content": true
+      },
+      {
+        "ID": "682",
+        "title": "Mohs Surgery",
+        "slug": "mohs-surgery",
+        "has_content": true
+      },
+      {
+        "ID": "683",
+        "title": "Pre-Cancer Treatments - Cryotherapy and Chemical Peels",
+        "slug": "pre-cancer-treatments-cryotherapy-and-chemical-peels",
+        "has_content": true
+      },
+      {
+        "ID": "684",
+        "title": "Mole Removal",
+        "slug": "mole-removal",
+        "has_content": true
+      },
+      {
+        "ID": "686",
+        "title": "Provider Template",
+        "slug": "provider-template",
+        "has_content": true
+      },
+      {
+        "ID": "693",
+        "title": "Dr. Mario Maruthur",
+        "slug": "dr-mario-maruthur",
+        "has_content": true
+      },
+      {
+        "ID": "702",
+        "title": "Provider Template",
+        "slug": "provider-template-2",
+        "has_content": true
+      },
+      {
+        "ID": "716",
+        "title": "Contact Thank You",
+        "slug": "contact-thank-you",
+        "has_content": true
+      },
+      {
+        "ID": "717",
+        "title": "Application Thank You",
+        "slug": "application-thank-you",
+        "has_content": true
+      },
+      {
+        "ID": "718",
+        "title": "Referral Thank You",
+        "slug": "referral-thank-you",
+        "has_content": true
+      },
+      {
+        "ID": "719",
+        "title": "Appointment Request Thank You",
+        "slug": "appointment-request-thank-you",
+        "has_content": true
+      },
+      {
+        "ID": "720",
+        "title": "Ask A Question Thank You",
+        "slug": "ask-a-question-thank-you",
+        "has_content": true
+      },
+      {
+        "ID": "721",
+        "title": "Privacy Policy",
+        "slug": "privacy-policy",
+        "has_content": true
+      },
+      {
+        "ID": "732",
+        "title": "Skin Exams and Biopsies",
+        "slug": "skin-exams-and-biopsies",
+        "has_content": true
+      },
+      {
+        "ID": "745",
+        "title": "Plastic Surgery Reconstruction",
+        "slug": "plastic-surgery-reconstruction",
+        "has_content": true
+      },
+      {
+        "ID": "1038",
+        "title": "Hamburger",
+        "slug": "header",
+        "has_content": true
+      },
+      {
+        "ID": "1081",
+        "title": "headerdesign",
+        "slug": "headerdesign",
+        "has_content": true
+      },
+      {
+        "ID": "1084",
+        "title": "NewHeaderDesign",
+        "slug": "newheaderdesign",
+        "has_content": true
+      },
+      {
+        "ID": "5408",
+        "title": "Home-custom",
+        "slug": "home-custom",
+        "has_content": true
+      },
+      {
+        "ID": "5413",
+        "title": "Home-A",
+        "slug": "home-a",
+        "has_content": true
+      },
+      {
+        "ID": "5419",
+        "title": "Home",
+        "slug": "home-2",
+        "has_content": true
+      },
+      {
+        "ID": "6000",
+        "title": "Bill Pay",
+        "slug": "bill-pay",
+        "has_content": true
+      },
+      {
+        "ID": "6556",
+        "title": "Jobs",
+        "slug": "jobs",
+        "has_content": true
+      },
+      {
+        "ID": "6588",
+        "title": "Dr. Malia Downing",
+        "slug": "dr-malia-downing",
+        "has_content": true
+      },
+      {
+        "ID": "6602",
+        "title": "Emma Stephens PA",
+        "slug": "emma-stephens-pa",
+        "has_content": true
+      },
+      {
+        "ID": "6604",
+        "title": "Raven Omar, PA-C",
+        "slug": "raven-omar-pa-c",
+        "has_content": true
+      }
+    ]
+  },
+  "services": {
+    "count": 10,
+    "list": [
+      {
+        "ID": "407",
+        "title": "Before Mohs Surgery",
+        "slug": "before-mohs-surgery",
+        "type": "page"
+      },
+      {
+        "ID": "682",
+        "title": "Mohs Surgery",
+        "slug": "mohs-surgery",
+        "type": "page"
+      },
+      {
+        "ID": "683",
+        "title": "Pre-Cancer Treatments - Cryotherapy and Chemical Peels",
+        "slug": "pre-cancer-treatments-cryotherapy-and-chemical-peels",
+        "type": "page"
+      },
+      {
+        "ID": "745",
+        "title": "Plastic Surgery Reconstruction",
+        "slug": "plastic-surgery-reconstruction",
+        "type": "page"
+      },
+      {
+        "ID": "786",
+        "title": "Pre-Cancer Treatments",
+        "slug": "pre-cancer-treatments",
+        "type": "nav_menu_item"
+      },
+      {
+        "ID": "788",
+        "title": "Plastic Surgery Reconstruction after Mohs",
+        "slug": "plastic-surgery-reconstruction-after-mohs",
+        "type": "nav_menu_item"
+      },
+      {
+        "ID": "795",
+        "title": "After Your Mohs Surgery",
+        "slug": "795",
+        "type": "nav_menu_item"
+      },
+      {
+        "ID": "804",
+        "title": "Pre-Cancer Treatments",
+        "slug": "pre-cancer-treatments-2",
+        "type": "nav_menu_item"
+      },
+      {
+        "ID": "806",
+        "title": "Plastic Surgery Reconstruction after Mohs",
+        "slug": "plastic-surgery-reconstruction-after-mohs-2",
+        "type": "nav_menu_item"
+      },
+      {
+        "ID": "976",
+        "title": "Before Your Mohs Surgery",
+        "slug": "976",
+        "type": "nav_menu_item"
+      }
+    ]
+  },
+  "locations": {
+    "count": 5,
+    "list": [
+      {
+        "ID": "328",
+        "title": "Locations",
+        "slug": "locations",
+        "type": "page"
+      },
+      {
+        "ID": "730",
+        "title": "All-Locations",
+        "slug": "all-locations",
+        "type": "et_pb_layout"
+      },
+      {
+        "ID": "796",
+        "title": "Our Locations",
+        "slug": "our-locations",
+        "type": "nav_menu_item"
+      },
+      {
+        "ID": "972",
+        "title": "Locations Row",
+        "slug": "locations-row",
+        "type": "et_pb_layout"
+      },
+      {
+        "ID": "973",
+        "title": "Locations Row Global",
+        "slug": "locations-row-global",
+        "type": "et_pb_layout"
+      }
+    ]
+  },
+  "providers": {
+    "count": 9,
+    "list": [
+      {
+        "ID": "87",
+        "title": "Our Doctors & Staff",
+        "slug": "our-doctors-staff",
+        "type": "page"
+      },
+      {
+        "ID": "686",
+        "title": "Provider Template",
+        "slug": "provider-template",
+        "type": "page"
+      },
+      {
+        "ID": "693",
+        "title": "Dr. Mario Maruthur",
+        "slug": "dr-mario-maruthur",
+        "type": "page"
+      },
+      {
+        "ID": "702",
+        "title": "Provider Template",
+        "slug": "provider-template-2",
+        "type": "page"
+      },
+      {
+        "ID": "5740",
+        "title": "Our Doctors & Staff",
+        "slug": "our-doctors-staff",
+        "type": "nav_menu_item"
+      },
+      {
+        "ID": "6588",
+        "title": "Dr. Malia Downing",
+        "slug": "dr-malia-downing",
+        "type": "page"
+      },
+      {
+        "ID": "6601",
+        "title": "Dr. Malia Downing",
+        "slug": "dr-malia-downing",
+        "type": "et_pb_layout"
+      },
+      {
+        "ID": "6604",
+        "title": "Raven Omar, PA-C",
+        "slug": "raven-omar-pa-c",
+        "type": "page"
+      },
+      {
+        "ID": "6613",
+        "title": "Raven Omar, PA-C",
+        "slug": "raven-omar-pa-c",
+        "type": "et_pb_layout"
+      }
+    ]
+  },
+  "menu_items": {
+    "count": 38
+  }
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Dr. Malia Downing",
+    "slug": "dr-malia-downing",
+    "title": "Dermatologist",
+    "bio": "was raised in Hawaii and received her undergraduate degree from the College of Saint Scholastica in Duluth, MN where she played collegiate soccer and graduated Summa Cum Laude. She was awarded her medical doctorate from the University of North Dakota, graduating second in her class. Upon completing medical school, she moved to Kansas City, KS where she did her medical internship and dermatology residency at the University of Kansas. Dr. Downing completed her fellowship training in Micrographic Surgery and Dermatologic Oncology and Cosmetic Dermatologic Surgery at Surgical Dermatology Group in Birmingham, AL where she received advanced training in the management of skin cancers and reconstructive techniques.",
+    "shortBio": "was raised in Hawaii and received her undergraduate degree from the College of Saint Scholastica in Duluth, MN where she played collegiate soccer and graduated Summa Cum Laude.  She was awarded her medical doctorate from the University of North Dakota, graduating second in her class.",
+    "imageUrl": "https://southernskistg.wpengine.com/wp-content/uploads/2025/05/dr-downin-bio-pic.jpg",
+    "education": [],
+    "certifications": [
+      "Board-Certified",
+      "fellowship trained",
+      "Certified"
+    ],
+    "specialties": [
+      "Mohs surgery",
+      "Skin Cancer Treatment",
+      "Surgical Dermatology",
+      "General Dermatology"
+    ],
+    "active": true,
+    "sourceFile": "Dr.-Malia-Downing.json"
+  },
+  {
+    "name": "Emma Stephens, PA",
+    "slug": "emma-stephens-pa",
+    "title": "Physician Assistant",
+    "bio": "was born and raised in Madison, AL, and graduated from Bob Jones High School. She went to Samford University, where she earned her BSN in Nursing in 2015. She worked in the cardiac ICU for three years before she entered the Physician Assistant Studies program at UAB, where she earned her Masters Degree. Later that year, she married her husband, Richard Stephens. He is also a PA who performs cardiac surgery at UAB. Emma discovered her passion for dermatology during clinical rotations in PA school. Initially after graduating, Emma worked in the ICU’s at St. Vincent’s Birmingham during COVID until she had the opportunity to transition to dermatology in 2021. Emma and Richard now live in Hoover, AL with their maltipoo named Obi. Emma has three step-children: Noah, Ella, and Mason. Richard and Emma are huge foodies and love to travel. In her spare time, Emma loves to thrift, renovate her house, and spend time with her husband and dog on the sofa binging their latest favorite show. Emma looks forward to caring for you at Southern Skies Dermatology!",
+    "shortBio": "was born and raised in Madison, AL, and graduated from Bob Jones High School.  She went to Samford University, where she earned her BSN in Nursing in 2015.",
+    "imageUrl": "https://southernskistg.wpengine.com/wp-content/uploads/2025/05/dr-emma-bio-pic.jpg",
+    "education": [],
+    "certifications": [],
+    "specialties": [
+      "Mohs surgery",
+      "Skin Cancer Treatment",
+      "Surgical Dermatology",
+      "General Dermatology"
+    ],
+    "active": true,
+    "sourceFile": "Emma-Stephens-PA.json"
+  },
+  {
+    "name": "Raven Omar, PA-C",
+    "slug": "raven-omar-pa-c",
+    "title": "Physician Assistant",
+    "bio": "Raven was born and raised in Birmingham, AL. She attended Clay-Chalkville High School and graduated at the top of her class. She attended Samford University, where she played point guard for the women's basketball team from 2017-2021 and helped them to two championships. She obtained her Bachelor of Science degree in Health Sciences in 2021. She also obtained her Masters in Physician Assistant Studies in December of 2023 from Samford University, as well.",
+    "shortBio": "Raven was born and raised in Birmingham, AL.  She attended Clay-Chalkville High School and graduated at the top of her class.",
+    "imageUrl": "",
+    "education": [],
+    "certifications": [
+      "Certified"
+    ],
+    "specialties": [
+      "Mohs surgery",
+      "Skin Cancer Treatment",
+      "Surgical Dermatology",
+      "General Dermatology"
+    ],
+    "active": true,
+    "sourceFile": "Raven-Omar-PA-C.json"
+  }
+]

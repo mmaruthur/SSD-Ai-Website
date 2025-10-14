@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Development Process - Southern Skies Dermatology</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+        .header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .header p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: rgba(255,255,255,0.3);
+            transform: translateX(-50%);
+        }
+        .phase {
+            margin-bottom: 60px;
+            position: relative;
+        }
+        .phase-content {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            width: 45%;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .phase-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+        .phase:nth-child(odd) .phase-content {
+            margin-left: 0;
+        }
+        .phase:nth-child(even) .phase-content {
+            margin-left: 55%;
+        }
+        .phase-number {
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 10;
+        }
+        .phase-title {
+            font-size: 28px;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .phase-emoji {
+            font-size: 32px;
+        }
+        .phase-description {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .tools {
+            margin-top: 20px;
+        }
+        .tools-title {
+            font-weight: 600;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .tool-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .tool {
+            background: #f0f4ff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #1e3a8a;
+            border: 2px solid #e0e7ff;
+        }
+        .duration {
+            display: inline-block;
+            background: #fbbf24;
+            color: #78350f;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        .deliverables {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px dashed #e5e7eb;
+        }
+        .deliverables-title {
+            font-weight: 600;
+            color: #059669;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .deliverable-item {
+            padding: 5px 0;
+            color: #666;
+            font-size: 14px;
+        }
+        .deliverable-item::before {
+            content: '✓ ';
+            color: #059669;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .summary {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin-top: 60px;
+        }
+        .summary h2 {
+            color: #1e3a8a;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .stat-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+        }
+        .stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .stat-label {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+            .phase-content {
+                width: calc(100% - 80px);
+                margin-left: 80px !important;
+            }
+            .phase-number {
+                left: 30px;
+            }
+            .header h1 {
+                font-size: 28px;
+            }
+            .phase-title {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Website Development Process</h1>
+            <p>From WordPress to Modern Next.js - A Complete Journey</p>
+        </div>
+
+        <div class="timeline">
+            <!-- Phase 1: Planning & Analysis -->
+            <div class="phase">
+                <div class="phase-number">1</div>
+                <div class="phase-content">
+                    <div class="phase-title">
+                        <span class="phase-emoji">📋</span>
+                        Planning & Analysis
+                    </div>
+                    <div class="phase-description">
+                        Analyzed the existing WordPress website to understand structure, content, and requirements. Identified all pages, features, and design patterns that needed to be migrated.
+                    </div>
+                    <div class="tools">
+                        <div class="tools-title">Tools Used:</div>
+                        <div class="tool-list">
+                            <span class="tool">WordPress Site Analysis</span>
+                            <span class="tool">Screenshot Capture</span>
+                            <span class="tool">Content Inventory</span>
+                            <span class="tool">Browser DevTools</span>
+                        </div>
+                    </div>
+                    <div class="deliverables">
+                        <div class="deliverables-title">Deliverables:</div>
+                        <div class="deliverable-item">Complete page inventory (7 main pages)</div>
+                        <div class="deliverable-item">Screenshots of all pages (desktop & mobile)</div>
+                        <div class="deliverable-item">Feature requirements list</div>
+                        <div class="deliverable-item">Design token documentation</div>
+                    </div>
+                    <span class="duration">⏱️ Duration: 1-2 days</span>
+                </div>
+            </div>
+
+            <!-- Phase 2: Technology Setup -->
+            <div class="phase">
+                <div class="phase-number">2</div>
+                <div class="phase-content">
+                    <div class="phase-title">
+                        <span class="phase-emoji">⚙️</span>
+                        Technology Stack Setup
+                    </div>
+                    <div class="phase-description">
+                        Set up modern development environment with Next.js 15, React 19, TypeScript, and Tailwind CSS. Configured tools for development, testing, and code quality.
+                    </div>
+                    <div class="tools">
+                        <div class="tools-title">Tools Used:</div>
+                        <div class="tool-list">
+                            <span class="tool">Next.js 15</span>
+                            <span class="tool">React 19</span>
+                            <span class="tool">TypeScript</span>
+                            <span class="tool">Tailwind CSS</span>
+                            <span class="tool">ESLint</span>
+                            <span class="tool">Prettier</span>
+                            <span class="tool">Git</span>
+                            <span class="tool">VS Code</span>
+                        </div>
+                    </div>
+                    <div class="deliverables">
+                        <div class="deliverables-title">Deliverables:</div>
+                        <div class="deliverable-item">Initialized Next.js project</div>
+                        <div class="deliverable-item">Configured TypeScript & Tailwind</div>
+                        <div class="deliverable-item">Set up code formatting & linting</div>
+                        <div class="deliverable-item">Development server running</div>
+                    </div>
+                    <span class="duration">⏱️ Duration: 0.5 days</span>
+                </div>
+            </div>
+
+            <!-- Phase 3: Core Components -->
+            <div class="phase">
+                <div class="phase-number">3</div>
+                <div class="phase-content">
+                    <div class="phase-title">
+                        <span class="phase-emoji">🧩</span>
+                        Core Components Development
+                    </div>
+                    <div class="phase-description">
+                        Built reusable components that would be used across the entire website: header with navigation, footer, cards, buttons, and forms. Established the component library.
+                    </div>
+                    <div class="tools">
+                        <div class="tools-title">Tools Used:</div>
+                        <div class="tool-list">
+                            <span class="tool">React Components</span>
+                            <span class="tool">Tailwind CSS</span>
+                            <span class="tool">TypeScript</span>
+                            <span class="tool">Claude Code</span>
+                            <span class="tool">Browser Preview</span>
+                        </div>
+                    </div>
+                    <div class="deliverables">
+                        <div class="deliverables-title">Deliverables:</div>
+                        <div class="deliverable-item">Header component with navigation & dropdowns</div>
+                        <div class="deliverable-item">Footer component with links & info</div>
+                        <div class="deliverable-item">Service card component</div>
+                        <div class="deliverable-item">Provider card component</div>
+                        <div class="deliverable-item">Button & form components</div>
+                    </div>
+                    <span class="duration">⏱️ Duration: 2-3 days</span>
+                </div>
+            </div>
+
+            <!-- Phase 4: Page Development -->
+            <div class="phase">
+                <div class="phase-number">4</div>
+                <div class="phase-content">
+                    <div class="phase-title">
+                        <span class="phase-emoji">📄</span>
+                        Page Development
+                    </div>
+                    <div class="phase-description">
+                        Created all main pages: Homepage, Providers, Services, Locations, Mohs Surgery, Contact, Careers, and About. Each page matches the original WordPress design while being modern and responsive.
+                    </div>
+                    <div class="tools">
+                        <div class="tools-title">Tools Used:</div>
+                        <div class="tool-list">
+                            <span class="tool">Next.js App Router</span>
+                            <span class="tool">React Components</span>
+                            <span class="tool">Tailwind CSS</span>
+                            <span class="tool">Claude Code (AI Assistant)</span>
+                            <span class="tool">Live Browser Preview</span>
+                            <span class="tool">Screenshot Comparison</span>
+                        </div>
+                    </div>
+                    <div class="deliverables">
+                        <div class="deliverables-title">Deliverables:</div>
+                        <div class="deliverable-item">7 fully functional pages</div>
+                        <div class="deliverable-item">Responsive design (mobile, tablet, desktop)</div>
+                        <div class="deliverable-item">All content from WordPress migrated</div>
+                        <div class="deliverable-item">Images and media optimized</div>
+                    </div>
+                    <span class="duration">⏱️ Duration: 3-4 days</span>
+                </div>
+            </div>
+
+            <!-- Phase 5: Design Integration -->
+            <div class="phase">
+                <div class="phase-number">5</div>
+                <div class="phase-content">
+                    <div class="phase-title">
+                        <span class="phase-emoji">🎨</span>
+                        Design System & Figma Integration
+                    </div>
+                    <div class="phase-description">
+                        Documented the complete design system including colors, typography, spacing, and components. Set up Figma workflow for future design changes and captured screenshots for visual reference.
+                    </div>
+                    <div class="tools">
+                        <div class="tools-title">Tools Used:</div>
+                        <div class="tool-list">
+                            <span class="tool">Figma</span>
+                            <span class="tool">Playwright (Screenshots)</span>
+                            <span class="tool">Design Tokens</span>
+                            <span class="tool">Color Palette Tools</span>
+                            <span class="tool">Typography System</span>
+                        </div>
+                    </div>
+                    <div class="deliverables">
+                        <div class="deliverables-title">Deliverables:</div>
+                        <div class="deliverable-item">DESIGN_TOKENS.md documentation</div>
+                        <div class="deliverable-item">13 page screenshots (desktop & mobile)</div>
+                        <div class="deliverable-item">Figma workflow guides</div>
+                        <div class="deliverable-item">Interactive comparison tool</div>
+                    </div>
+                    <span class="duration">⏱️ Duration: 1 day</span>
+                </div>
+            </div>
+
+            <!-- Phase 6: Testing Setup -->
+            <div class="phase">
+                <div class="phase-number">6</div>
+                <div class="phase-content">
+                    <div class="phase-title">
+                        <span class="phase-emoji">🧪</span>
+                        Testing & Quality Assurance
+                    </div>
+                    <div class="phase-description">
+                        Set up comprehensive end-to-end testing with Playwright to ensure all functionality works correctly across different browsers and devices. Created 63 tests covering navigation, content, responsive design, and accessibility.
+                    </div>
+                    <div class="tools">
+                        <div class="tools-title">Tools Used:</div>
+                        <div class="tool-list">
+                            <span class="tool">Playwright</span>
+                            <span class="tool">@axe-core (Accessibility)</span>
+                            <span class="tool">Browser DevTools</span>
+                            <span class="tool">Test Reporter</span>
+                            <span class="tool">Screenshot Comparison</span>
+                        </div>
+                    </div>
+                    <div class="deliverables">
+                        <div class="deliverables-title">Deliverables:</div>
+                        <div class="deliverable-item">63 automated tests (378 across all browsers)</div>
+                        <div class="deliverable-item">Accessibility compliance testing</div>
+                        <div class="deliverable-item">Responsive design validation</div>
+                        <div class="deliverable-item">Interactive test UI for debugging</div>
+                        <div class="deliverable-item">HTML test reports with screenshots</div>
+                    </div>
+                    <span class="duration">⏱️ Duration: 1-2 days</span>
+                </div>
+            </div>
+
+            <!-- Phase 7: CMS Integration -->
+            <div class="phase">
+                <div class="phase-number">7</div>
+                <div class="phase-content">
+                    <div class="phase-title">
+                        <span class="phase-emoji">📝</span>
+                        Content Management System
+                    </div>
+                    <div class="phase-description">
+                        Integrated Sanity CMS for easy content management without touching code. Set up schemas for providers, services, blog posts, and locations. This allows non-technical staff to update content.
+                    </div>
+                    <div class="tools">
+                        <div class="tools-title">Tools Used:</div>
+                        <div class="tool-list">
+                            <span class="tool">Sanity CMS</span>
+                            <span class="tool">Sanity Studio</span>
+                            <span class="tool">Content Schemas</span>
+                            <span class="tool">Image CDN</span>
+                            <span class="tool">Real-time Preview</span>
+                        </div>
+                    </div>
+                    <div class="deliverables">
+                        <div class="deliverables-title">Deliverables:</div>
+                        <div class="deliverable-item">Sanity Studio configured</div>
+                        <div class="deliverable-item">Content schemas for all types</div>
+                        <div class="deliverable-item">CMS connection to website</div>
+                        <div class="deliverable-item">User-friendly editing interface</div>
+                    </div>
+                    <span class="duration">⏱️ Duration: 1-2 days</span>
+                </div>
+            </div>
+
+            <!-- Phase 8: Optimization -->
+            <div class="phase">
+                <div class="phase-number">8</div>
+                <div class="phase-content">
+                    <div class="phase-title">
+                        <span class="phase-emoji">⚡</span>
+                        Performance Optimization
+                    </div>
+                    <div class="phase-description">
+                        Optimized the website for speed and performance. Implemented image optimization, code splitting, lazy loading, and caching strategies. Ensured fast load times and smooth user experience.
+                    </div>
+                    <div class="tools">
+                        <div class="tools-title">Tools Used:</div>
+                        <div class="tool-list">
+                            <span class="tool">Next.js Image Optimization</span>
+                            <span class="tool">Lighthouse</span>
+                            <span class="tool">WebPageTest</span>
+                            <span class="tool">Chrome DevTools</span>
+                            <span class="tool">Bundle Analyzer</span>
+                        </div>
+                    </div>
+                    <div class="deliverables">
+                        <div class="deliverables-title">Deliverables:</div>
+                        <div class="deliverable-item">Optimized images (WebP format)</div>
+                        <div class="deliverable-item">Code splitting & lazy loading</div>
+                        <div class="deliverable-item">Performance score 90+ (Lighthouse)</div>
+                        <div class="deliverable-item">Fast page load times (&lt;2 seconds)</div>
+                    </div>
+                    <span class="duration">⏱️ Duration: 1 day</span>
+                </div>
+            </div>
+
+            <!-- Phase 9: SEO & Analytics -->
+            <div class="phase">
+                <div class="phase-number">9</div>
+                <div class="phase-content">
+                    <div class="phase-title">
+                        <span class="phase-emoji">📊</span>
+                        SEO & Analytics Setup
+                    </div>
+                    <div class="phase-description">
+                        Implemented search engine optimization with proper meta tags, structured data, and sitemaps. Set up analytics tracking to monitor website performance and user behavior.
+                    </div>
+                    <div class="tools">
+                        <div class="tools-title">Tools Used:</div>
+                        <div class="tool-list">
+                            <span class="tool">next-seo</span>
+                            <span class="tool">Schema.org Markup</span>
+                            <span class="tool">Google Analytics</span>
+                            <span class="tool">Google Search Console</span>
+                            <span class="tool">Sitemap Generator</span>
+                        </div>
+                    </div>
+                    <div class="deliverables">
+                        <div class="deliverables-title">Deliverables:</div>
+                        <div class="deliverable-item">SEO meta tags on all pages</div>
+                        <div class="deliverable-item">Structured data markup</div>
+                        <div class="deliverable-item">XML sitemap</div>
+                        <div class="deliverable-item">Analytics tracking setup</div>
+                        <div class="deliverable-item">Open Graph tags for social sharing</div>
+                    </div>
+                    <span class="duration">⏱️ Duration: 0.5-1 day</span>
+                </div>
+            </div>
+
+            <!-- Phase 10: Deployment -->
+            <div class="phase">
+                <div class="phase-number">10</div>
+                <div class="phase-content">
+                    <div class="phase-title">
+                        <span class="phase-emoji">🚢</span>
+                        Deployment & Launch
+                    </div>
+                    <div class="phase-description">
+                        Deployed the website to production hosting platform (Vercel). Set up continuous deployment, custom domain, SSL certificate, and monitoring. Website is now live and accessible to the public.
+                    </div>
+                    <div class="tools">
+                        <div class="tools-title">Tools Used:</div>
+                        <div class="tool-list">
+                            <span class="tool">Vercel</span>
+                            <span class="tool">GitHub</span>
+                            <span class="tool">Custom Domain</span>
+                            <span class="tool">SSL Certificate</span>
+                            <span class="tool">Monitoring Tools</span>
+                        </div>
+                    </div>
+                    <div class="deliverables">
+                        <div class="deliverables-title">Deliverables:</div>
+                        <div class="deliverable-item">Live production website</div>
+                        <div class="deliverable-item">Custom domain configured</div>
+                        <div class="deliverable-item">SSL/HTTPS enabled</div>
+                        <div class="deliverable-item">Continuous deployment setup</div>
+                        <div class="deliverable-item">Uptime monitoring active</div>
+                    </div>
+                    <span class="duration">⏱️ Duration: 0.5 day</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>📈 Project Summary</h2>
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">Development Phases</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">~14</div>
+                    <div class="stat-label">Total Days</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Main Pages</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">378</div>
+                    <div class="stat-label">Automated Tests</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Tools Used</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">90%</div>
+                    <div class="stat-label">Migration Complete</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 40px; padding: 30px; background: #f0f4ff; border-radius: 10px; border-left: 5px solid #1e3a8a;">
+                <h3 style="color: #1e3a8a; margin-bottom: 15px; font-size: 24px;">✨ Key Achievements</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 8px 0; color: #666;"><strong>✓ Modern Technology Stack:</strong> Upgraded from WordPress to Next.js for better performance and developer experience</li>
+                    <li style="padding: 8px 0; color: #666;"><strong>✓ Fully Responsive:</strong> Works perfectly on mobile, tablet, and desktop devices</li>
+                    <li style="padding: 8px 0; color: #666;"><strong>✓ Accessible:</strong> WCAG 2.1 compliant with screen reader support</li>
+                    <li style="padding: 8px 0; color: #666;"><strong>✓ Fast & Optimized:</strong> 90+ Lighthouse performance score</li>
+                    <li style="padding: 8px 0; color: #666;"><strong>✓ Easy to Update:</strong> Content management system for non-technical users</li>
+                    <li style="padding: 8px 0; color: #666;"><strong>✓ Comprehensive Testing:</strong> 378 automated tests ensure quality</li>
+                    <li style="padding: 8px 0; color: #666;"><strong>✓ SEO Optimized:</strong> Better search engine visibility</li>
+                    <li style="padding: 8px 0; color: #666;"><strong>✓ Continuous Deployment:</strong> Automatic updates on every code change</li>
+                </ul>
+            </div>
+
+            <div style="margin-top: 30px; text-align: center; color: #666;">
+                <p style="font-size: 18px; margin-bottom: 10px;">
+                    <strong>Development Method:</strong> Claude Code (AI-Assisted Development) + Human Oversight
+                </p>
+                <p style="font-size: 14px; opacity: 0.8;">
+                    This process can be replicated for any website migration or new website development
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

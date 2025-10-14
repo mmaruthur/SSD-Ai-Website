@@ -1,0 +1,82 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║                 SOUTHERN SKIES DERMATOLOGY - NETLIFY DEPLOYMENT              ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+This folder contains your complete Next.js website ready for deployment!
+
+📁 FOLDER SIZE: 40MB (all source code, no build files)
+
+✅ WHAT'S INCLUDED:
+   • Complete Next.js 15 website
+   • 12 pages (Home, About, Services, Providers, Locations, etc.)
+   • Responsive design (mobile, tablet, desktop)
+   • 378 Playwright tests
+   • Sanity CMS integration
+   • SEO optimization
+   • Google Maps integration
+
+🚀 DEPLOYMENT OPTIONS:
+
+OPTION 1: GitHub + Netlify (Recommended - Easy Auto-Deploy)
+─────────────────────────────────────────────────────────────
+1. Create GitHub repo at https://github.com/new
+2. In Terminal, run these commands:
+   
+   cd /Users/alvarogonzalez/Desktop/ssd-website-deploy
+   git init
+   git add .
+   git commit -m "Initial commit - SSD website"
+   git remote add origin YOUR_GITHUB_REPO_URL
+   git push -u origin main
+
+3. Go to https://app.netlify.com
+4. Click "Add new site" → "Import an existing project"
+5. Choose GitHub → Select your repo
+6. Click "Deploy site" (Netlify auto-detects Next.js!)
+
+
+OPTION 2: Netlify CLI (Quick Testing)
+─────────────────────────────────────
+1. Install Netlify CLI:
+   npm install -g netlify-cli
+
+2. Login:
+   netlify login
+
+3. Deploy:
+   cd /Users/alvarogonzalez/Desktop/ssd-website-deploy
+   netlify init
+   netlify deploy --prod
+
+
+📖 DOCUMENTATION FILES:
+   • DEPLOYMENT.md - Complete deployment guide
+   • README-NETLIFY.md - Project overview
+   • netlify.toml - Build configuration (already included)
+
+
+⚙️ BUILD SETTINGS (Already Configured):
+   • Build command: npm run build
+   • Publish directory: .next
+   • Node version: 20
+   • ESLint: Disabled during builds
+
+
+🌐 AFTER DEPLOYMENT:
+   • Add custom domain in Netlify dashboard
+   • HTTPS is automatic
+   • Every git push auto-deploys
+   • Pull requests get preview URLs
+
+
+💡 NEED HELP?
+   • Read DEPLOYMENT.md for detailed instructions
+   • Netlify Docs: https://docs.netlify.com
+   • Next.js Docs: https://nextjs.org/docs
+
+
+═══════════════════════════════════════════════════════════════════════════════
+Ready to deploy! Choose Option 1 or Option 2 above to get started.
+═══════════════════════════════════════════════════════════════════════════════

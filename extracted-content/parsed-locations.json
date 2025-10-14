@@ -1,0 +1,202 @@
+[
+  {
+    "name": "Locations",
+    "slug": {
+      "current": "locations"
+    },
+    "address": "123 Main Street, Suite 100",
+    "city": "Locations",
+    "state": "AL",
+    "zipCode": "35173",
+    "phone": "(205) 123-4567",
+    "email": "locations@southernskiesdermatology.com",
+    "hoursOfOperation": [
+      {
+        "day": "Monday",
+        "hours": "8:00 AM - 5:00 PM"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "8:00 AM - 5:00 PM"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "8:00 AM - 5:00 PM"
+      },
+      {
+        "day": "Thursday",
+        "hours": "8:00 AM - 5:00 PM"
+      },
+      {
+        "day": "Friday",
+        "hours": "8:00 AM - 5:00 PM"
+      }
+    ],
+    "imageUrl": "https://southernskiesdermatology.com/wp-content/uploads/2022/04/businessman-and-woman-walking-outside-office-build-2022-03-07-23-56-15-utc.jpg",
+    "parkingInfo": "Free parking available",
+    "accessibilityFeatures": [
+      "Wheelchair accessible entrance",
+      "Accessible restrooms"
+    ]
+  },
+  {
+    "name": "All-Locations",
+    "slug": {
+      "current": "all-locations"
+    },
+    "address": "123 Main Street, Suite 100",
+    "city": "All-Locations",
+    "state": "AL",
+    "zipCode": "35173",
+    "phone": "(205) 123-4567",
+    "email": "all-locations@southernskiesdermatology.com",
+    "hoursOfOperation": [
+      {
+        "day": "Monday",
+        "hours": "8:00 AM - 5:00 PM"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "8:00 AM - 5:00 PM"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "8:00 AM - 5:00 PM"
+      },
+      {
+        "day": "Thursday",
+        "hours": "8:00 AM - 5:00 PM"
+      },
+      {
+        "day": "Friday",
+        "hours": "8:00 AM - 5:00 PM"
+      }
+    ],
+    "imageUrl": "https://southernskiesdermatology.com/wp-content/uploads/2022/04/map.jpg",
+    "parkingInfo": "Free parking available",
+    "accessibilityFeatures": [
+      "Wheelchair accessible entrance",
+      "Accessible restrooms"
+    ]
+  },
+  {
+    "name": "Our Locations",
+    "slug": {
+      "current": "our-locations"
+    },
+    "address": "123 Main Street, Suite 100",
+    "city": "Our",
+    "state": "AL",
+    "zipCode": "35173",
+    "phone": "(205) 123-4567",
+    "email": "our-locations@southernskiesdermatology.com",
+    "hoursOfOperation": [
+      {
+        "day": "Monday",
+        "hours": "8:00 AM - 5:00 PM"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "8:00 AM - 5:00 PM"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "8:00 AM - 5:00 PM"
+      },
+      {
+        "day": "Thursday",
+        "hours": "8:00 AM - 5:00 PM"
+      },
+      {
+        "day": "Friday",
+        "hours": "8:00 AM - 5:00 PM"
+      }
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800",
+    "parkingInfo": "Free parking available",
+    "accessibilityFeatures": [
+      "Wheelchair accessible entrance",
+      "Accessible restrooms"
+    ]
+  },
+  {
+    "name": "Locations Row",
+    "slug": {
+      "current": "locations-row"
+    },
+    "address": "123 Main Street, Suite 100",
+    "city": "Locations",
+    "state": "AL",
+    "zipCode": "35173",
+    "phone": "(205) 123-4567",
+    "email": "locations-row@southernskiesdermatology.com",
+    "hoursOfOperation": [
+      {
+        "day": "Monday",
+        "hours": "8:00 AM - 5:00 PM"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "8:00 AM - 5:00 PM"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "8:00 AM - 5:00 PM"
+      },
+      {
+        "day": "Thursday",
+        "hours": "8:00 AM - 5:00 PM"
+      },
+      {
+        "day": "Friday",
+        "hours": "8:00 AM - 5:00 PM"
+      }
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800",
+    "parkingInfo": "Free parking available",
+    "accessibilityFeatures": [
+      "Wheelchair accessible entrance",
+      "Accessible restrooms"
+    ]
+  },
+  {
+    "name": "Locations Row Global",
+    "slug": {
+      "current": "locations-row-global"
+    },
+    "address": "123 Main Street, Suite 100",
+    "city": "Locations",
+    "state": "AL",
+    "zipCode": "35173",
+    "phone": "(205) 123-4567",
+    "email": "locations-row-global@southernskiesdermatology.com",
+    "hoursOfOperation": [
+      {
+        "day": "Monday",
+        "hours": "8:00 AM - 5:00 PM"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "8:00 AM - 5:00 PM"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "8:00 AM - 5:00 PM"
+      },
+      {
+        "day": "Thursday",
+        "hours": "8:00 AM - 5:00 PM"
+      },
+      {
+        "day": "Friday",
+        "hours": "8:00 AM - 5:00 PM"
+      }
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800",
+    "parkingInfo": "Free parking available",
+    "accessibilityFeatures": [
+      "Wheelchair accessible entrance",
+      "Accessible restrooms"
+    ]
+  }
+]

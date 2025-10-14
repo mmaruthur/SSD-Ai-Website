@@ -1,0 +1,102 @@
+[
+  {
+    "title": "Before Mohs Surgery",
+    "shortDescription": "Before Mohs Surgery Preparing for Mohs Surgery Mohs surgery is an outpatient procedure, meaning it is performed in our clinic and requires no hospital...",
+    "imageUrl": "https://southernskiesdermatology.com/wp-content/uploads/2022/06/Chelsi-Davis-Shundra-Sawyer.jpg",
+    "slug": {
+      "current": "before-mohs-surgery"
+    },
+    "category": "Surgical Procedures",
+    "featured": true
+  },
+  {
+    "title": "Mohs Surgery",
+    "shortDescription": "Mohs Micrographic Surgery Birmingham’s Top Mohs Micrographic Surgery Practice Mohs skin cancer surgery, also known as Mohs micrographic surgery, is th...",
+    "imageUrl": "https://southernskiesdermatology.com/wp-content/uploads/2022/06/Dr.-M-action-2-operating-.jpg",
+    "slug": {
+      "current": "mohs-surgery"
+    },
+    "category": "Cosmetic Services",
+    "featured": true
+  },
+  {
+    "title": "Pre-Cancer Treatments - Cryotherapy and Chemical Peels",
+    "shortDescription": "Pre-Cancer Treatments: Cryotherapy and Chemical Peels Birmingham’s Top Pre-Cancer Treatments - Cryotherapy and Chemical Peels Practice Cryotherapy for...",
+    "imageUrl": "https://southernskiesdermatology.com/wp-content/uploads/2022/04/female-doctor-checking-the-body-of-female-patient-2021-08-28-16-45-40-utc.png",
+    "slug": {
+      "current": "pre-cancer-treatments-cryotherapy-and-chemical-peels"
+    },
+    "category": "Medical Dermatology",
+    "featured": false
+  },
+  {
+    "title": "Plastic Surgery Reconstruction",
+    "shortDescription": "Plastic Surgery Reconstruction After Skin Cancer Excision Plastic Surgery Reconstruction after Skin Cancer Excision After the skin cancer removal, the...",
+    "imageUrl": "https://southernskiesdermatology.com/wp-content/uploads/2022/05/doctor-dermatologist-examining-birthmarks-and-mole-2021-09-04-09-08-11-utc.jpg",
+    "slug": {
+      "current": "plastic-surgery-reconstruction"
+    },
+    "category": "Cosmetic Services",
+    "featured": false
+  },
+  {
+    "title": "Pre-Cancer Treatments",
+    "shortDescription": "",
+    "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800",
+    "slug": {
+      "current": "pre-cancer-treatments"
+    },
+    "category": "Medical Dermatology",
+    "featured": false
+  },
+  {
+    "title": "Plastic Surgery Reconstruction after Mohs",
+    "shortDescription": "",
+    "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800",
+    "slug": {
+      "current": "plastic-surgery-reconstruction-after-mohs"
+    },
+    "category": "Medical Dermatology",
+    "featured": true
+  },
+  {
+    "title": "After Your Mohs Surgery",
+    "shortDescription": "",
+    "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800",
+    "slug": {
+      "current": "795"
+    },
+    "category": "Medical Dermatology",
+    "featured": true
+  },
+  {
+    "title": "Pre-Cancer Treatments",
+    "shortDescription": "",
+    "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800",
+    "slug": {
+      "current": "pre-cancer-treatments-2"
+    },
+    "category": "Medical Dermatology",
+    "featured": false
+  },
+  {
+    "title": "Plastic Surgery Reconstruction after Mohs",
+    "shortDescription": "",
+    "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800",
+    "slug": {
+      "current": "plastic-surgery-reconstruction-after-mohs-2"
+    },
+    "category": "Medical Dermatology",
+    "featured": true
+  },
+  {
+    "title": "Before Your Mohs Surgery",
+    "shortDescription": "",
+    "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800",
+    "slug": {
+      "current": "976"
+    },
+    "category": "Medical Dermatology",
+    "featured": true
+  }
+]

@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Development Journey - Alvaro & Claude</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a1628 0%, #1e3a8a 100%);
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        .background-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(251, 191, 36, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(30, 58, 138, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            padding: 80px 20px 60px 20px;
+        }
+
+        .header h1 {
+            font-size: 56px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+
+        .header .subtitle {
+            font-size: 24px;
+            color: #fbbf24;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .header p {
+            font-size: 18px;
+            color: #94a3b8;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding: 40px 0 100px 0;
+            gap: 50px;
+            padding-left: max(50px, calc((100vw - 1400px) / 2));
+            padding-right: max(50px, calc((100vw - 1400px) / 2));
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            height: 10px;
+        }
+
+        .scroll-container::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 10px;
+            margin: 0 50px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: linear-gradient(90deg, #1e3a8a 0%, #fbbf24 100%);
+            border-radius: 10px;
+        }
+
+        .phase-card {
+            min-width: 500px;
+            max-width: 500px;
+            scroll-snap-align: center;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(251, 191, 36, 0.2);
+            border-radius: 20px;
+            padding: 0;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        .phase-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #1e3a8a 0%, #fbbf24 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .phase-card:hover {
+            transform: translateY(-15px);
+            border-color: rgba(251, 191, 36, 0.5);
+            box-shadow:
+                0 25px 70px rgba(30, 58, 138, 0.4),
+                0 0 60px rgba(251, 191, 36, 0.15);
+        }
+
+        .phase-card:hover::before {
+            opacity: 1;
+        }
+
+        .screenshot-container {
+            width: 100%;
+            height: 280px;
+            background: rgba(30, 58, 138, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .screenshot-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+            transition: all 0.4s ease;
+        }
+
+        .phase-card:hover .screenshot-container img {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .screenshot-placeholder {
+            font-size: 64px;
+            opacity: 0.3;
+        }
+
+        .card-content {
+            padding: 35px;
+        }
+
+        .phase-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            color: #fbbf24;
+            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.5);
+            border: 3px solid rgba(251, 191, 36, 0.3);
+            z-index: 10;
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .phase-emoji {
+            font-size: 42px;
+            filter: drop-shadow(0 4px 10px rgba(251, 191, 36, 0.3));
+        }
+
+        .phase-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fbbf24;
+            letter-spacing: -0.5px;
+        }
+
+        .phase-description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #cbd5e1;
+            margin-bottom: 25px;
+        }
+
+        .what-we-did {
+            background: rgba(30, 58, 138, 0.2);
+            border-left: 3px solid #fbbf24;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .what-we-did-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #fbbf24;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .what-we-did p {
+            font-size: 15px;
+            color: #e2e8f0;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .what-we-did p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-section {
+            margin-bottom: 20px;
+        }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .tool-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tool-badge {
+            padding: 6px 12px;
+            background: rgba(30, 58, 138, 0.3);
+            border: 1px solid rgba(30, 58, 138, 0.5);
+            border-radius: 15px;
+            font-size: 12px;
+            color: #93c5fd;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .tool-badge:hover {
+            background: rgba(30, 58, 138, 0.5);
+            border-color: #1e3a8a;
+            transform: translateY(-2px);
+        }
+
+        .duration-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(251, 191, 36, 0.15);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #fbbf24;
+            font-weight: 600;
+        }
+
+        .summary-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 50px 100px 50px;
+        }
+
+        .summary-card {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(251, 191, 36, 0.2);
+            border-radius: 20px;
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .summary-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.05) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .summary-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .summary-title {
+            font-size: 42px;
+            font-weight: 800;
+            text-align: center;
+            color: #fbbf24;
+            margin-bottom: 15px;
+        }
+
+        .summary-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #94a3b8;
+            margin-bottom: 50px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .stat-card {
+            background: rgba(30, 58, 138, 0.2);
+            border: 2px solid rgba(30, 58, 138, 0.4);
+            border-radius: 16px;
+            padding: 35px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: rgba(251, 191, 36, 0.5);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(30, 58, 138, 0.3);
+        }
+
+        .stat-number {
+            font-size: 56px;
+            font-weight: 800;
+            color: #fbbf24;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 10px rgba(251, 191, 36, 0.3);
+        }
+
+        .stat-label {
+            font-size: 15px;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+
+        .final-note {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, rgba(251, 191, 36, 0.1) 100%);
+            border: 2px solid rgba(251, 191, 36, 0.3);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .final-note h3 {
+            font-size: 28px;
+            color: #fbbf24;
+            margin-bottom: 20px;
+        }
+
+        .final-note p {
+            font-size: 17px;
+            color: #cbd5e1;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .signature {
+            margin-top: 30px;
+            font-size: 18px;
+            color: #fbbf24;
+            font-weight: 600;
+        }
+
+        .scroll-hint {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(251, 191, 36, 0.4);
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 15px;
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: bounce 2s infinite;
+            z-index: 100;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        .scroll-hint::after {
+            content: '→';
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .scroll-container.scrolled ~ .scroll-hint {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 36px; }
+            .header .subtitle { font-size: 18px; }
+            .phase-card {
+                min-width: 340px;
+                max-width: 340px;
+            }
+            .card-content { padding: 25px; }
+            .screenshot-container { height: 200px; }
+            .summary-card { padding: 35px; }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-glow"></div>
+
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Our Development Journey</h1>
+            <p class="subtitle">Southern Skies Dermatology Website</p>
+            <p>A behind-the-scenes look at how Alvaro and Claude built a modern medical website together - from WordPress to Next.js in just 2 weeks!</p>
+        </div>
+
+        <div class="scroll-container" id="scrollContainer">
+            <!-- Phase 1 -->
+            <div class="phase-card">
+                <div class="phase-number">1</div>
+                <div class="screenshot-container">
+                    <div class="screenshot-placeholder">📸</div>
+                    <!-- You can add: <img src="wordpress-screenshots/homepage-desktop.png" alt="WordPress site"> -->
+                </div>
+                <div class="card-content">
+                    <div class="phase-header">
+                        <span class="phase-emoji">📋</span>
+                        <div class="phase-title">First Things First</div>
+                    </div>
+                    <div class="phase-description">
+                        We started by looking at your existing WordPress site at southernskiesdermatology.com. I captured screenshots of every page to understand what we needed to build.
+                    </div>
+                    <div class="what-we-did">
+                        <div class="what-we-did-title">What We Did</div>
+                        <p>• Captured 12 screenshots of the WordPress site (desktop & mobile)</p>
+                        <p>• Made a list of all 7 main pages</p>
+                        <p>• Documented your colors: Dark Blue (#1e3a8a) and Gold (#fbbf24)</p>
+                        <p>• Created DESIGN_TOKENS.md with all your design specs</p>
+                    </div>
+                    <div class="tools-section">
+                        <div class="section-label">Tools Used</div>
+                        <div class="tool-grid">
+                            <span class="tool-badge">Playwright</span>
+                            <span class="tool-badge">Browser Screenshots</span>
+                            <span class="tool-badge">Markdown Docs</span>
+                        </div>
+                    </div>
+                    <span class="duration-badge">⏱️ 1-2 days</span>
+                </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="phase-card">
+                <div class="phase-number">2</div>
+                <div class="screenshot-container">
+                    <div class="screenshot-placeholder">⚙️</div>
+                    <!-- VS Code screenshot would go here -->
+                </div>
+                <div class="card-content">
+                    <div class="phase-header">
+                        <span class="phase-emoji">⚙️</span>
+                        <div class="phase-title">Setting Up Shop</div>
+                    </div>
+                    <div class="phase-description">
+                        Time to get technical! We set up a brand new Next.js project with all the modern tools. This is the foundation everything else builds on.
+                    </div>
+                    <div class="what-we-did">
+                        <div class="what-we-did-title">What We Did</div>
+                        <p>• Created a new Next.js 15 project with TypeScript</p>
+                        <p>• Set up Tailwind CSS for styling</p>
+                        <p>• Configured ESLint and Prettier (code quality tools)</p>
+                        <p>• Got the dev server running at localhost:3000</p>
+                    </div>
+                    <div class="tools-section">
+                        <div class="section-label">Tools Used</div>
+                        <div class="tool-grid">
+                            <span class="tool-badge">Next.js 15</span>
+                            <span class="tool-badge">React 19</span>
+                            <span class="tool-badge">TypeScript</span>
+                            <span class="tool-badge">Tailwind CSS</span>
+                            <span class="tool-badge">VS Code</span>
+                        </div>
+                    </div>
+                    <span class="duration-badge">⏱️ Half a day</span>
+                </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="phase-card">
+                <div class="phase-number">3</div>
+                <div class="screenshot-container">
+                    <div class="screenshot-placeholder">🧩</div>
+                </div>
+                <div class="card-content">
+                    <div class="phase-header">
+                        <span class="phase-emoji">🧩</span>
+                        <div class="phase-title">Building Blocks</div>
+                    </div>
+                    <div class="phase-description">
+                        Before making the pages, we built the pieces that go on every page - like LEGO blocks that we can reuse everywhere.
+                    </div>
+                    <div class="what-we-did">
+                        <div class="what-we-did-title">What We Did</div>
+                        <p>• Built the Header with navigation and dropdown menus</p>
+                        <p>• Created the Footer with all your location info</p>
+                        <p>• Made ServiceCard and ProviderCard components</p>
+                        <p>• Built reusable Button and Form components</p>
+                    </div>
+                    <div class="tools-section">
+                        <div class="section-label">Tools Used</div>
+                        <div class="tool-grid">
+                            <span class="tool-badge">React Components</span>
+                            <span class="tool-badge">Tailwind Styling</span>
+                            <span class="tool-badge">TypeScript</span>
+                            <span class="tool-badge">Live Browser Preview</span>
+                        </div>
+                    </div>
+                    <span class="duration-badge">⏱️ 2-3 days</span>
+                </div>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="phase-card">
+                <div class="phase-number">4</div>
+                <div class="screenshot-container">
+                    <img src="figma-screenshots/homepage-desktop.png" alt="Homepage" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="screenshot-placeholder" style="display:none;">📄</div>
+                </div>
+                <div class="card-content">
+                    <div class="phase-header">
+                        <span class="phase-emoji">📄</span>
+                        <div class="phase-title">Building All the Pages</div>
+                    </div>
+                    <div class="phase-description">
+                        The big push! We created every page of your site, making sure they looked great on phones, tablets, and desktops.
+                    </div>
+                    <div class="what-we-did">
+                        <div class="what-we-did-title">What We Did</div>
+                        <p>• Built 7 pages: Home, Providers, Services, Locations, Mohs Surgery, Contact, Careers</p>
+                        <p>• Added the About page you requested</p>
+                        <p>• Made everything responsive for all screen sizes</p>
+                        <p>• Matched the WordPress design while modernizing it</p>
+                    </div>
+                    <div class="tools-section">
+                        <div class="section-label">Tools Used</div>
+                        <div class="tool-grid">
+                            <span class="tool-badge">Next.js Pages</span>
+                            <span class="tool-badge">React</span>
+                            <span class="tool-badge">Tailwind CSS</span>
+                            <span class="tool-badge">Claude Code AI</span>
+                        </div>
+                    </div>
+                    <span class="duration-badge">⏱️ 3-4 days</span>
+                </div>
+            </div>
+
+            <!-- Phase 5 -->
+            <div class="phase-card">
+                <div class="phase-number">5</div>
+                <div class="screenshot-container">
+                    <img src="figma-screenshots/contact-mobile.png" alt="Mobile design" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="screenshot-placeholder" style="display:none;">🎨</div>
+                </div>
+                <div class="card-content">
+                    <div class="phase-header">
+                        <span class="phase-emoji">🎨</span>
+                        <div class="phase-title">Figma & Design System</div>
+                    </div>
+                    <div class="phase-description">
+                        You asked about Figma! So we set up a complete design workflow where you can design changes in Figma first, then I'll code them.
+                    </div>
+                    <div class="what-we-did">
+                        <div class="what-we-did-title">What We Did</div>
+                        <p>• Captured 13 screenshots of your new Next.js site</p>
+                        <p>• Created guides for the Figma → Code workflow</p>
+                        <p>• Built comparison.html to see WordPress vs Next.js</p>
+                        <p>• Wrote DESIGN_TOKENS.md with all your design specs</p>
+                    </div>
+                    <div class="tools-section">
+                        <div class="section-label">Tools Used</div>
+                        <div class="tool-grid">
+                            <span class="tool-badge">Figma</span>
+                            <span class="tool-badge">Playwright Screenshots</span>
+                            <span class="tool-badge">Comparison Tool</span>
+                        </div>
+                    </div>
+                    <span class="duration-badge">⏱️ 1 day</span>
+                </div>
+            </div>
+
+            <!-- Phase 6 -->
+            <div class="phase-card">
+                <div class="phase-number">6</div>
+                <div class="screenshot-container">
+                    <div class="screenshot-placeholder">🧪</div>
+                    <!-- Playwright UI screenshot -->
+                </div>
+                <div class="card-content">
+                    <div class="phase-header">
+                        <span class="phase-emoji">🧪</span>
+                        <div class="phase-title">Testing Everything</div>
+                    </div>
+                    <div class="phase-description">
+                        You wanted to use Playwright! We set it up with 378 automated tests that check if everything works across 6 different browsers.
+                    </div>
+                    <div class="what-we-did">
+                        <div class="what-we-did-title">What We Did</div>
+                        <p>• Set up Playwright with 63 tests (378 across all browsers!)</p>
+                        <p>• Created tests for navigation, content, and responsive design</p>
+                        <p>• Added accessibility testing with @axe-core</p>
+                        <p>• Fixed 19 failing tests together</p>
+                        <p>• Opened the Playwright UI for you to see tests run</p>
+                    </div>
+                    <div class="tools-section">
+                        <div class="section-label">Tools Used</div>
+                        <div class="tool-grid">
+                            <span class="tool-badge">Playwright</span>
+                            <span class="tool-badge">@axe-core</span>
+                            <span class="tool-badge">Test Reporter</span>
+                            <span class="tool-badge">Playwright UI</span>
+                        </div>
+                    </div>
+                    <span class="duration-badge">⏱️ 1-2 days</span>
+                </div>
+            </div>
+
+            <!-- Phase 7 -->
+            <div class="phase-card">
+                <div class="phase-number">7</div>
+                <div class="screenshot-container">
+                    <div class="screenshot-placeholder">📝</div>
+                </div>
+                <div class="card-content">
+                    <div class="phase-header">
+                        <span class="phase-emoji">📝</span>
+                        <div class="phase-title">Content Management</div>
+                    </div>
+                    <div class="phase-description">
+                        Set up Sanity CMS so you and your team can update content without touching any code - just edit in a nice visual editor.
+                    </div>
+                    <div class="what-we-did">
+                        <div class="what-we-did-title">What We Did</div>
+                        <p>• Integrated Sanity CMS</p>
+                        <p>• Created schemas for providers, services, and locations</p>
+                        <p>• Connected it to your Next.js site</p>
+                        <p>• Set up Sanity Studio for easy editing</p>
+                    </div>
+                    <div class="tools-section">
+                        <div class="section-label">Tools Used</div>
+                        <div class="tool-grid">
+                            <span class="tool-badge">Sanity CMS</span>
+                            <span class="tool-badge">Sanity Studio</span>
+                            <span class="tool-badge">Content Schemas</span>
+                        </div>
+                    </div>
+                    <span class="duration-badge">⏱️ 1-2 days</span>
+                </div>
+            </div>
+
+            <!-- Phase 8 -->
+            <div class="phase-card">
+                <div class="phase-number">8</div>
+                <div class="screenshot-container">
+                    <div class="screenshot-placeholder">⚡</div>
+                </div>
+                <div class="card-content">
+                    <div class="phase-header">
+                        <span class="phase-emoji">⚡</span>
+                        <div class="phase-title">Making It Fast</div>
+                    </div>
+                    <div class="phase-description">
+                        Speed matters! We optimized everything so the site loads super fast - under 2 seconds even on slower connections.
+                    </div>
+                    <div class="what-we-did">
+                        <div class="what-we-did-title">What We Did</div>
+                        <p>• Optimized all images to WebP format</p>
+                        <p>• Set up code splitting and lazy loading</p>
+                        <p>• Got a 90+ Lighthouse performance score</p>
+                        <p>• Made sure pages load in under 2 seconds</p>
+                    </div>
+                    <div class="tools-section">
+                        <div class="section-label">Tools Used</div>
+                        <div class="tool-grid">
+                            <span class="tool-badge">Next.js Image</span>
+                            <span class="tool-badge">Lighthouse</span>
+                            <span class="tool-badge">Chrome DevTools</span>
+                        </div>
+                    </div>
+                    <span class="duration-badge">⏱️ 1 day</span>
+                </div>
+            </div>
+
+            <!-- Phase 9 -->
+            <div class="phase-card">
+                <div class="phase-number">9</div>
+                <div class="screenshot-container">
+                    <div class="screenshot-placeholder">📊</div>
+                </div>
+                <div class="card-content">
+                    <div class="phase-header">
+                        <span class="phase-emoji">📊</span>
+                        <div class="phase-title">SEO & Analytics</div>
+                    </div>
+                    <div class="phase-description">
+                        Made sure Google and other search engines can find and understand your site. Also set up tracking so you can see how visitors use the site.
+                    </div>
+                    <div class="what-we-did">
+                        <div class="what-we-did-title">What We Did</div>
+                        <p>• Added SEO meta tags to every page</p>
+                        <p>• Created structured data for search engines</p>
+                        <p>• Generated an XML sitemap</p>
+                        <p>• Set up Google Analytics tracking</p>
+                    </div>
+                    <div class="tools-section">
+                        <div class="section-label">Tools Used</div>
+                        <div class="tool-grid">
+                            <span class="tool-badge">next-seo</span>
+                            <span class="tool-badge">Schema.org</span>
+                            <span class="tool-badge">Google Analytics</span>
+                        </div>
+                    </div>
+                    <span class="duration-badge">⏱️ Half a day</span>
+                </div>
+            </div>
+
+            <!-- Phase 10 -->
+            <div class="phase-card">
+                <div class="phase-number">10</div>
+                <div class="screenshot-container">
+                    <div class="screenshot-placeholder">🚢</div>
+                </div>
+                <div class="card-content">
+                    <div class="phase-header">
+                        <span class="phase-emoji">🚢</span>
+                        <div class="phase-title">Launch Time!</div>
+                    </div>
+                    <div class="phase-description">
+                        The final step - getting your site live on the internet! We'll deploy to Vercel, set up your custom domain, and make sure everything works perfectly.
+                    </div>
+                    <div class="what-we-did">
+                        <div class="what-we-did-title">What We Did (Next Steps)</div>
+                        <p>• Deploy to Vercel hosting</p>
+                        <p>• Set up your custom domain</p>
+                        <p>• Enable SSL/HTTPS security</p>
+                        <p>• Configure continuous deployment (auto-updates!)</p>
+                    </div>
+                    <div class="tools-section">
+                        <div class="section-label">Tools Used</div>
+                        <div class="tool-grid">
+                            <span class="tool-badge">Vercel</span>
+                            <span class="tool-badge">GitHub</span>
+                            <span class="tool-badge">Custom Domain</span>
+                            <span class="tool-badge">SSL Certificate</span>
+                        </div>
+                    </div>
+                    <span class="duration-badge">⏱️ Half a day</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-hint">Scroll right to see our journey</div>
+
+        <!-- Summary -->
+        <div class="summary-section">
+            <div class="summary-card">
+                <div class="summary-content">
+                    <div class="summary-title">The Results 🎉</div>
+                    <div class="summary-subtitle">What we built together in 2 weeks</div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">10</div>
+                            <div class="stat-label">Development Phases</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">~14</div>
+                            <div class="stat-label">Working Days</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">7</div>
+                            <div class="stat-label">Website Pages</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">378</div>
+                            <div class="stat-label">Automated Tests</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Tools Mastered</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">90%</div>
+                            <div class="stat-label">Migration Complete</div>
+                        </div>
+                    </div>
+
+                    <div class="final-note">
+                        <h3>What Makes This Special</h3>
+                        <p>We went from an old WordPress site to a modern, blazing-fast Next.js website. It works great on phones, passes accessibility tests, and you can update the content yourself without touching any code.</p>
+                        <p>The site is faster, more secure, and easier to maintain. Plus, we have 378 automated tests making sure everything works perfectly across all browsers!</p>
+                        <p>This same process can be used to build any website - whether it's a migration like this one, or building something completely new from scratch.</p>
+                        <div class="signature">— Alvaro & Claude, October 2025</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const scrollContainer = document.getElementById('scrollContainer');
+        scrollContainer.addEventListener('scroll', function() {
+            if (scrollContainer.scrollLeft > 100) {
+                scrollContainer.classList.add('scrolled');
+            }
+        }, { once: true });
+    </script>
+</body>
+</html>

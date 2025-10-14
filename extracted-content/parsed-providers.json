@@ -1,0 +1,45 @@
+[
+  {
+    "name": "Dr. Mario Maruthur",
+    "professionalTitle": "MD, FAAD, FACMS - Mohs Surgeon & Dermatologist",
+    "imageUrl": "https://southernskiesdermatology.com/wp-content/uploads/2022/12/dr-mario-maruthur-new-pic.jpg",
+    "slug": {
+      "current": "dr-mario-maruthur"
+    },
+    "shortBio": "Dr. Mario Maruthur Specializes in X at Location 1 and Location 3 Completed fellowship in Mohs Micrographic Surgery and Dermatologic Oncology at the Memorial Sloan Kettering Cancer Center in New York Worked with and taught by renowned skin cancer surg...",
+    "areasOfExpertise": [
+      "Mohs Surgery",
+      "Skin Cancer Treatment"
+    ],
+    "specialty": "Dermatologist"
+  },
+  {
+    "name": "Dr. Malia Downing",
+    "professionalTitle": "MD, FAAD - Dermatologist",
+    "imageUrl": "https://southernskiesdermatology.com/wp-content/uploads/2025/05/dr-downin-bio-pic.jpg",
+    "slug": {
+      "current": "dr-malia-downing"
+    },
+    "shortBio": "Dr. Malia Downing Malia Downing, MD, FAAD Double Board-Certified fellowship trained Mohs Micrographic surgeon and Dermatologist with an additional fellowship in Dermatologic Cosmetic surgery. Published multiple peer-reviewed journal articles and has...",
+    "areasOfExpertise": [
+      "Mohs Surgery",
+      "Skin Cancer Treatment",
+      "Cosmetic Dermatology"
+    ],
+    "specialty": "Dermatologist"
+  },
+  {
+    "name": "Raven Omar, PA-C",
+    "professionalTitle": "PA-C - Physician Assistant",
+    "imageUrl": "https://southernskiesdermatology.com/wp-content/uploads/2025/05/dummy-image.jpg",
+    "slug": {
+      "current": "raven-omar-pa-c"
+    },
+    "shortBio": "Raven Omar, PA-C Specializes in X at Location 1 and Location 3 Master of Physician Assistant Studies “I was extremely pleased with my experience at Southern Skies. Dr. Mario and his NP, Adrienne, removed a large basal cell on the top of my lip. It wa...",
+    "areasOfExpertise": [
+      "Mohs Surgery",
+      "Skin Cancer Treatment"
+    ],
+    "specialty": "Physician Assistant"
+  }
+]
