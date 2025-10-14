@@ -94,7 +94,7 @@ export default async function ProviderDetailPage({
                 </div>
                 <h3 className="text-2xl font-bold mb-6">Education</h3>
                 <ul className="space-y-3">
-                  {education.map((item, index) => (
+                  {education.map((item: string, index: number) => (
                     <li key={index} className="flex gap-3">
                       <span className="text-primary mt-1">•</span>
                       <span className="text-gray-700">{item}</span>

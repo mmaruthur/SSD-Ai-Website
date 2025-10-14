@@ -1,0 +1,83 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║                        GITHUB + NETLIFY DEPLOYMENT STEPS                     ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+Your code is ready and committed to git locally!
+
+STEP 1: CREATE GITHUB REPOSITORY
+─────────────────────────────────────────────────────────────────────────────
+
+A browser window should have opened to: https://github.com/new
+
+1. Repository name: ssd-nextjs-website
+2. Description: Southern Skies Dermatology - Next.js Website  
+3. Visibility: ✓ Private (recommended) or Public
+4. ⚠️ IMPORTANT: DO NOT initialize with README, .gitignore, or license
+   (we already have these files)
+5. Click "Create repository"
+
+
+STEP 2: PUSH CODE TO GITHUB
+─────────────────────────────────────────────────────────────────────────────
+
+After creating the repo, copy YOUR repository URL from GitHub, then run:
+
+cd /Users/alvarogonzalez/Desktop/ssd-website-deploy
+git remote add origin YOUR_GITHUB_REPO_URL
+git push -u origin main
+
+Example (replace with YOUR username):
+git remote add origin https://github.com/YOUR_USERNAME/ssd-nextjs-website.git
+git push -u origin main
+
+
+STEP 3: CONNECT TO NETLIFY
+─────────────────────────────────────────────────────────────────────────────
+
+1. Go to: https://app.netlify.com
+2. Click "Add new site" → "Import an existing project"
+3. Choose "Deploy with GitHub"
+4. Authorize Netlify to access your GitHub account
+5. Select your repository: ssd-nextjs-website
+6. Netlify will auto-detect Next.js settings:
+   - Build command: npm run build
+   - Publish directory: .next
+   - Node version: 20
+7. Click "Deploy site"
+
+
+STEP 4: WAIT FOR BUILD (5-10 minutes)
+─────────────────────────────────────────────────────────────────────────────
+
+Netlify will:
+1. Install dependencies (npm install)
+2. Build your Next.js app (npm run build)  
+3. Deploy to CDN
+4. Give you a live URL like: https://random-name-12345.netlify.app
+
+
+STEP 5: DONE! 🎉
+─────────────────────────────────────────────────────────────────────────────
+
+You'll get:
+• Live production URL
+• Automatic HTTPS
+• Continuous deployment (every git push deploys automatically)
+• Preview deployments for pull requests
+
+
+TROUBLESHOOTING:
+─────────────────────────────────────────────────────────────────────────────
+
+If build fails:
+- Check the build log in Netlify dashboard
+- Ensure Node version is set to 20
+- Environment variables might be needed for Sanity CMS
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Need help? I'm here to assist!
+
+═══════════════════════════════════════════════════════════════════════════════
