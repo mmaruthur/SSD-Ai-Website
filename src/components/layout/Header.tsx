@@ -9,7 +9,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+    <header className="wp-header bg-[#0B61C7] shadow-sm sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -25,10 +25,10 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation Menu - Hidden on mobile */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-1">
             <Link
               href="/"
-              className="text-gray-700 hover:text-primary transition-colors font-medium"
+              className="wp-nav-item text-white hover:text-white transition-colors font-bold px-4 py-2"
             >
               Home
             </Link>
@@ -37,25 +37,25 @@ export default function Header() {
             <div className="relative group">
               <Link
                 href="/providers"
-                className="text-gray-700 hover:text-primary transition-colors font-medium flex items-center gap-1"
+                className="wp-nav-item text-white hover:text-white transition-colors font-bold px-4 py-2 flex items-center gap-1"
               >
                 Providers
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </Link>
-              <div className="absolute left-0 mt-2 w-56 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <div className="py-2">
-                  <Link href="/providers/dr-mario-maruthur" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary">
+              <div className="wp-submenu absolute left-0 mt-2 w-56 shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-0">
+                  <Link href="/providers/dr-mario-maruthur" className="wp-submenu-item block text-white hover:bg-[#0a559f]">
                     Dr. Mario Maruthur
                   </Link>
-                  <Link href="/providers/dr-malia-downing" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary">
+                  <Link href="/providers/dr-malia-downing" className="wp-submenu-item block text-white hover:bg-[#0a559f]">
                     Dr. Malia Downing
                   </Link>
-                  <Link href="/providers/emma-stephens-pa" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary">
+                  <Link href="/providers/emma-stephens-pa" className="wp-submenu-item block text-white hover:bg-[#0a559f]">
                     Emma Stephens, PA
                   </Link>
-                  <Link href="/providers/raven-omar-pa-c" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary">
+                  <Link href="/providers/raven-omar-pa-c" className="wp-submenu-item block text-white hover:bg-[#0a559f]">
                     Raven Omar, PA-C
                   </Link>
                 </div>
@@ -66,22 +66,22 @@ export default function Header() {
             <div className="relative group">
               <Link
                 href="/services"
-                className="text-gray-700 hover:text-primary transition-colors font-medium flex items-center gap-1"
+                className="wp-nav-item text-white hover:text-white transition-colors font-bold px-4 py-2 flex items-center gap-1"
               >
                 Services
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </Link>
-              <div className="absolute left-0 mt-2 w-64 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <div className="py-2">
-                  <Link href="/mohs-surgery" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary">
+              <div className="wp-submenu absolute left-0 mt-2 w-64 shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-0">
+                  <Link href="/mohs-surgery" className="wp-submenu-item block text-white hover:bg-[#0a559f]">
                     Mohs Surgery
                   </Link>
-                  <Link href="/skin-exams-biopsies" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary">
+                  <Link href="/skin-exams-biopsies" className="wp-submenu-item block text-white hover:bg-[#0a559f]">
                     Skin Exams & Biopsies
                   </Link>
-                  <Link href="/services" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary">
+                  <Link href="/services" className="wp-submenu-item block text-white hover:bg-[#0a559f]">
                     All Services
                   </Link>
                 </div>
@@ -90,21 +90,21 @@ export default function Header() {
 
             {/* Plan Your Visit Dropdown */}
             <div className="relative group">
-              <button className="text-gray-700 hover:text-primary transition-colors font-medium flex items-center gap-1">
+              <button className="wp-nav-item text-white hover:text-white transition-colors font-bold px-4 py-2 flex items-center gap-1">
                 Plan Your Visit
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div className="absolute left-0 mt-2 w-64 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <div className="py-2">
-                  <Link href="/before-mohs-surgery" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary">
+              <div className="wp-submenu absolute left-0 mt-2 w-64 shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-0">
+                  <Link href="/before-mohs-surgery" className="wp-submenu-item block text-white hover:bg-[#0a559f]">
                     Before Your Mohs Surgery
                   </Link>
-                  <Link href="/after-mohs-surgery" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary">
+                  <Link href="/after-mohs-surgery" className="wp-submenu-item block text-white hover:bg-[#0a559f]">
                     After Your Mohs Surgery
                   </Link>
-                  <Link href="/contact" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary">
+                  <Link href="/contact" className="wp-submenu-item block text-white hover:bg-[#0a559f]">
                     Request Appointment
                   </Link>
                 </div>
@@ -113,35 +113,35 @@ export default function Header() {
 
             <Link
               href="/about"
-              className="text-gray-700 hover:text-primary transition-colors font-medium"
+              className="wp-nav-item text-white hover:text-white transition-colors font-bold px-4 py-2"
             >
               About
             </Link>
 
             <Link
               href="/locations"
-              className="text-gray-700 hover:text-primary transition-colors font-medium"
+              className="wp-nav-item text-white hover:text-white transition-colors font-bold px-4 py-2"
             >
               Locations
             </Link>
 
             <Link
               href="/bill-pay"
-              className="text-gray-700 hover:text-primary transition-colors font-medium"
+              className="wp-nav-item text-white hover:text-white transition-colors font-bold px-4 py-2"
             >
               Bill Pay
             </Link>
 
             <Link
               href="/careers"
-              className="text-gray-700 hover:text-primary transition-colors font-medium"
+              className="wp-nav-item text-white hover:text-white transition-colors font-bold px-4 py-2"
             >
               Careers
             </Link>
 
             <Link
               href="/contact"
-              className="bg-secondary text-primary px-6 py-2 rounded font-bold hover:bg-secondary/90 transition-colors"
+              className="wp-button bg-[#FFD700] text-[#0B61C7] px-6 py-2 font-bold ml-2"
             >
               Contact Us
             </Link>
@@ -149,7 +149,7 @@ export default function Header() {
 
           {/* Mobile Menu Button - Only shows on mobile */}
           <button
-            className="md:hidden text-gray-700"
+            className="md:hidden text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -174,80 +174,87 @@ export default function Header() {
 
         {/* Mobile Menu - Slides down when hamburger is clicked */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-3">
+          <div className="md:hidden mt-4 pb-4 space-y-3 border-t border-white/20 pt-4">
             <Link
               href="/"
-              className="block text-gray-700 hover:text-primary transition-colors font-medium"
+              className="block text-white hover:text-[#FFD700] transition-colors font-bold"
               onClick={() => setMobileMenuOpen(false)}
             >
               Home
             </Link>
             <Link
               href="/providers"
-              className="block text-gray-700 hover:text-primary transition-colors font-medium"
+              className="block text-white hover:text-[#FFD700] transition-colors font-bold"
               onClick={() => setMobileMenuOpen(false)}
             >
               Providers
             </Link>
             <Link
               href="/services"
-              className="block text-gray-700 hover:text-primary transition-colors font-medium"
+              className="block text-white hover:text-[#FFD700] transition-colors font-bold"
               onClick={() => setMobileMenuOpen(false)}
             >
               Services
             </Link>
             <Link
               href="/mohs-surgery"
-              className="block text-gray-700 hover:text-primary transition-colors font-medium pl-4"
+              className="block text-white hover:text-[#FFD700] transition-colors font-bold pl-4"
               onClick={() => setMobileMenuOpen(false)}
             >
               Mohs Surgery
             </Link>
             <Link
               href="/skin-exams-biopsies"
-              className="block text-gray-700 hover:text-primary transition-colors font-medium pl-4"
+              className="block text-white hover:text-[#FFD700] transition-colors font-bold pl-4"
               onClick={() => setMobileMenuOpen(false)}
             >
               Skin Exams & Biopsies
             </Link>
             <Link
               href="/before-mohs-surgery"
-              className="block text-gray-700 hover:text-primary transition-colors font-medium"
+              className="block text-white hover:text-[#FFD700] transition-colors font-bold"
               onClick={() => setMobileMenuOpen(false)}
             >
               Before Mohs Surgery
             </Link>
             <Link
               href="/after-mohs-surgery"
-              className="block text-gray-700 hover:text-primary transition-colors font-medium"
+              className="block text-white hover:text-[#FFD700] transition-colors font-bold"
               onClick={() => setMobileMenuOpen(false)}
             >
               After Mohs Surgery
             </Link>
             <Link
+              href="/about"
+              className="block text-white hover:text-[#FFD700] transition-colors font-bold"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              About
+            </Link>
+            <Link
               href="/locations"
-              className="block text-gray-700 hover:text-primary transition-colors font-medium"
+              className="block text-white hover:text-[#FFD700] transition-colors font-bold"
               onClick={() => setMobileMenuOpen(false)}
             >
               Locations
             </Link>
             <Link
               href="/bill-pay"
-              className="block text-gray-700 hover:text-primary transition-colors font-medium"
+              className="block text-white hover:text-[#FFD700] transition-colors font-bold"
               onClick={() => setMobileMenuOpen(false)}
             >
               Bill Pay
             </Link>
             <Link
               href="/careers"
-              className="block text-gray-700 hover:text-primary transition-colors font-medium"
+              className="block text-white hover:text-[#FFD700] transition-colors font-bold"
               onClick={() => setMobileMenuOpen(false)}
             >
               Careers
             </Link>
             <Link
               href="/contact"
-              className="block bg-secondary text-primary px-6 py-2 rounded font-bold hover:bg-secondary/90 transition-colors text-center"
+              className="wp-button block bg-[#FFD700] text-[#0B61C7] px-6 py-2 font-bold text-center mt-4"
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact Us

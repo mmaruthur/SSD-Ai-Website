@@ -66,28 +66,27 @@ export default async function Home() {
   const featuredProviders = fallbackProviders;
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary via-blue-700 to-blue-900 text-white">
-        <div className="absolute inset-0 bg-black/10"></div>
+      {/* Hero Section - WordPress Blue Background */}
+      <section className="relative bg-[#0B61C7] text-white">
         <div className="relative max-w-7xl mx-auto px-6 py-24 md:py-32">
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               Expert Dermatology Care
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100 leading-relaxed">
+            <p className="text-xl md:text-2xl mb-8 text-white/90 leading-relaxed">
               Comprehensive skin care solutions from board-certified dermatologists
               and experienced physician assistants across multiple locations.
             </p>
             <div className="flex gap-4 flex-wrap">
               <Link
                 href="/contact"
-                className="bg-secondary text-primary px-8 py-4 rounded-lg font-bold text-lg hover:bg-secondary/90 transition-all hover:scale-105 shadow-xl"
+                className="wp-button bg-[#FFD700] text-[#0B61C7] px-8 py-4 font-bold text-lg shadow-xl"
               >
                 Book Appointment
               </Link>
               <Link
                 href="/services"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-all"
+                className="wp-button border-2 border-white bg-transparent text-white px-8 py-4 font-bold text-lg hover:bg-white/10"
               >
                 Our Services
               </Link>
@@ -100,13 +99,13 @@ export default async function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0B61C7]">
               Why Choose Us
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="wp-yellow-circle mx-auto mb-6">
                 <span className="text-3xl">🏆</span>
               </div>
               <h3 className="text-xl font-bold mb-2">Board-Certified Experts</h3>
@@ -115,7 +114,7 @@ export default async function Home() {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="wp-yellow-circle mx-auto mb-6">
                 <span className="text-3xl">📍</span>
               </div>
               <h3 className="text-xl font-bold mb-2">Multiple Locations</h3>
@@ -124,7 +123,7 @@ export default async function Home() {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="wp-yellow-circle mx-auto mb-6">
                 <span className="text-3xl">💙</span>
               </div>
               <h3 className="text-xl font-bold mb-2">Comprehensive Care</h3>
@@ -137,7 +136,7 @@ export default async function Home() {
       </section>
 
       {/* Featured Services Section */}
-      <section className="py-20 px-6 bg-gray-50">
+      <section className="py-20 px-6 bg-[#f6f9fd]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -193,17 +192,17 @@ export default async function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 px-6 bg-blue-50">
+      <section className="py-20 px-6 bg-[#f6f9fd]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0B61C7]">
               What Our Patients Say
             </h2>
             <p className="text-xl text-gray-600">
               Read testimonials from our satisfied patients
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="global-testimonial grid md:grid-cols-3 gap-8">
             {[
               {
                 name: 'Gale Sanders',
@@ -224,14 +223,16 @@ export default async function Home() {
                 rating: 5,
               },
             ].map((testimonial, index) => (
-              <div key={index} className="bg-white p-8 rounded-xl shadow-md">
-                <div className="flex mb-4">
+              <div key={index} className="wp-testimonial bg-white p-8 rounded-xl shadow-md">
+                <div className="wp-testimonial-rating flex mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-secondary text-xl">★</span>
+                    <span key={i} className="text-[#FFD700] text-xl">★</span>
                   ))}
                 </div>
-                <p className="text-gray-700 mb-6 italic">"{testimonial.text}"</p>
-                <div>
+                <div className="wp-testimonial-content">
+                  <p className="text-gray-700 mb-6 italic">"{testimonial.text}"</p>
+                </div>
+                <div className="wp-testimonial-author">
                   <p className="font-bold">{testimonial.name}</p>
                   <p className="text-sm text-gray-500">{testimonial.location}</p>
                 </div>
@@ -241,25 +242,25 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-primary to-blue-800 text-white">
+      {/* CTA Section - WordPress Blue */}
+      <section className="py-20 px-6 bg-[#0B61C7] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to Get Started?
           </h2>
-          <p className="text-xl mb-8 text-blue-100">
+          <p className="text-xl mb-8 text-white/90">
             Schedule your appointment today and experience expert dermatology care
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link
               href="/contact"
-              className="bg-secondary text-primary px-8 py-4 rounded-lg font-bold text-lg hover:bg-secondary/90 transition-all hover:scale-105 shadow-xl"
+              className="wp-button bg-[#FFD700] text-[#0B61C7] px-8 py-4 font-bold text-lg shadow-xl"
             >
               Request Appointment
             </Link>
             <Link
               href="/locations"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-all"
+              className="wp-button border-2 border-white bg-transparent text-white px-8 py-4 font-bold text-lg hover:bg-white/10"
             >
               Find a Location
             </Link>
