@@ -39,12 +39,12 @@ export default async function ProviderDetailPage({
         </div>
       </div>
 
-      {/* Provider Header */}
-      <section className="bg-gradient-to-r from-primary to-blue-800 text-white py-16 px-6">
+      {/* Provider Header - WordPress Blue */}
+      <section className="bg-[#0B61C7] text-white py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-12 items-center">
             <div className="md:col-span-1">
-              <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
+              <div className="wp-provider-card relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src={imageUrl}
                   alt={provider.name}
@@ -57,11 +57,11 @@ export default async function ProviderDetailPage({
               <h1 className="text-5xl md:text-6xl font-bold mb-4">
                 {provider.name}
               </h1>
-              <p className="text-2xl text-blue-100 mb-2">{professionalTitle}</p>
-              <p className="text-xl text-blue-200 mb-8">{specialty}</p>
+              <p className="text-2xl text-white/90 mb-2">{professionalTitle}</p>
+              <p className="text-xl text-white/80 mb-8">{specialty}</p>
               <Link
                 href="/contact"
-                className="inline-block bg-secondary text-primary px-8 py-4 rounded-lg font-bold text-lg hover:bg-secondary/90 transition-all hover:scale-105 shadow-xl"
+                className="wp-button inline-block bg-[#FFD700] text-[#0B61C7] px-8 py-4 font-bold text-lg shadow-xl"
               >
                 Schedule with {provider.name.split(' ')[provider.name.startsWith('Dr.') ? 1 : 0]}
               </Link>
@@ -143,25 +143,25 @@ export default async function ProviderDetailPage({
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-primary to-blue-800 text-white">
+      {/* CTA Section - WordPress Blue */}
+      <section className="py-20 px-6 bg-[#0B61C7] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to Schedule?
           </h2>
-          <p className="text-xl mb-8 text-blue-100">
+          <p className="text-xl mb-8 text-white/90">
             Book an appointment with {provider.name} today
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link
               href="/contact"
-              className="bg-secondary text-primary px-8 py-4 rounded-lg font-bold text-lg hover:bg-secondary/90 transition-all hover:scale-105 shadow-xl"
+              className="wp-button bg-[#FFD700] text-[#0B61C7] px-8 py-4 font-bold text-lg shadow-xl"
             >
               Request Appointment
             </Link>
             <Link
               href="/providers"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-all"
+              className="wp-button border-2 border-white bg-transparent text-white px-8 py-4 font-bold text-lg hover:bg-white/10"
             >
               View All Providers
             </Link>
