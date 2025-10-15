@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
+import './wordpress-styles.css'; // WordPress Divi theme exact visual clone styles
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 

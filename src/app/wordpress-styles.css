@@ -1,0 +1,793 @@
+/*
+ * WordPress Divi Child Theme - Exact Visual Clone Styles
+ * Extracted from: southernskiesdermatology.com
+ *
+ * This file contains all custom styling from the WordPress Divi child theme
+ * to create a pixel-perfect visual clone in Next.js
+ */
+
+/* ============================================
+   FONTS - Futura PT (WordPress Theme Fonts)
+   ============================================ */
+@import url('https://use.typekit.net/xxx.css'); /* You'll need Adobe Fonts license */
+
+/* Alternative: Use system fonts that closely match Futura PT */
+:root {
+  --font-futura-pt: 'futura-pt', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font-futura-pt-bold: 'futura-pt-bold', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font-roboto: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ============================================
+   WORDPRESS COLOR PALETTE (EXACT)
+   ============================================ */
+:root {
+  /* Primary Brand Colors */
+  --wp-primary-blue: #0B61C7;
+  --wp-secondary-gold: #FFD700;
+  --wp-light-gold: #F7D147;
+
+  /* Background Colors */
+  --wp-light-bg: #f6f9fd;
+  --wp-white: #FFFFFF;
+
+  /* Text Colors */
+  --wp-text-dark: #000000;
+  --wp-text-gray: #555555;
+
+  /* Accent Colors */
+  --wp-gold-transparent: #f7d1474a;
+  --wp-blue-overlay: #0b61c7f7;
+}
+
+/* ============================================
+   GLOBAL TYPOGRAPHY (WordPress Style)
+   ============================================ */
+body {
+  font-family: var(--font-roboto);
+  font-weight: 400;
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-futura-pt-bold);
+  font-weight: bold;
+}
+
+p {
+  font-family: var(--font-roboto);
+}
+
+/* ============================================
+   UTILITY CLASSES (WordPress Theme)
+   ============================================ */
+.light-bg {
+  background-color: var(--wp-light-bg) !important;
+}
+
+.justify-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* ============================================
+   BUTTONS (WordPress Divi Style)
+   ============================================ */
+.wp-button,
+.et_pb_button {
+  font-family: var(--font-futura-pt-bold);
+  border-radius: 50px;
+  padding: 10px 14px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.wp-button:hover {
+  background-color: var(--wp-secondary-gold);
+  color: var(--wp-primary-blue);
+}
+
+/* ============================================
+   HEADER & NAVIGATION (WordPress Style)
+   ============================================ */
+.wp-header nav {
+  font-family: var(--font-futura-pt);
+  font-weight: 700;
+}
+
+.wp-nav-item {
+  position: relative;
+  padding: 5px 15px;
+}
+
+.wp-nav-item::before {
+  content: '';
+  display: flex;
+  position: absolute;
+  height: 2.5px;
+  width: 0px;
+  margin: 0px auto;
+  background: var(--wp-gold-transparent);
+  transition: width 0.2s linear;
+  bottom: 0px;
+  left: 0;
+}
+
+.wp-nav-item:hover::before {
+  width: 100%;
+  background: var(--wp-secondary-gold);
+}
+
+.wp-nav-item.active::before {
+  width: 25px;
+  background: var(--wp-light-gold);
+  opacity: 1;
+}
+
+/* Vertical separators between nav items */
+.wp-nav-item::after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 80%;
+  width: 0.5px;
+  background: #ffffff;
+  top: 10%;
+  right: 0px;
+}
+
+/* Submenu styling */
+.wp-submenu {
+  background-color: var(--wp-primary-blue) !important;
+  padding: 0px !important;
+}
+
+.wp-submenu-item {
+  padding: 8px 20px !important;
+  display: block;
+  width: 100%;
+  line-height: 22px !important;
+}
+
+/* ============================================
+   FOOTER (WordPress Style)
+   ============================================ */
+.wp-footer {
+  background: var(--wp-primary-blue);
+  color: var(--wp-white);
+}
+
+.wp-footer-menu {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-futura-pt);
+}
+
+.wp-footer-menu-item {
+  margin: 0px 0px 15px 0px;
+}
+
+.wp-footer-menu a::before {
+  content: '';
+  display: flex;
+  position: absolute;
+  height: 2.5px;
+  width: 0px;
+  background: var(--wp-gold-transparent);
+  transition: width 0.2s linear;
+  bottom: 0px;
+  left: 0;
+}
+
+.wp-footer-menu a:hover::before {
+  width: 100%;
+  background: var(--wp-secondary-gold);
+}
+
+.footer-title {
+  font-family: var(--font-futura-pt-bold);
+  font-weight: bold;
+}
+
+.copyright {
+  font-family: var(--font-futura-pt);
+  font-weight: 500;
+}
+
+/* ============================================
+   TESTIMONIALS (WordPress Carousel Style)
+   ============================================ */
+.wp-testimonial {
+  padding: 0px 47px;
+}
+
+.wp-testimonial-rating {
+  padding: 5px 0px 0px;
+  margin-bottom: 0px !important;
+}
+
+.wp-testimonial-content {
+  padding-bottom: 70px;
+}
+
+.wp-testimonial-author {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+
+/* Carousel navigation buttons */
+.wp-carousel-button {
+  font-size: 50px !important;
+  width: 50px !important;
+  height: 50px !important;
+  background: transparent !important;
+  color: var(--wp-primary-blue);
+}
+
+/* ============================================
+   SERVICE CARDS (WordPress Hover Style)
+   ============================================ */
+.wp-service-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.wp-service-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: all 0.3s ease;
+}
+
+.wp-service-card:hover .wp-service-card-content {
+  justify-content: center;
+}
+
+.wp-service-card-title {
+  font-family: var(--font-futura-pt);
+  transition: all 0.3s ease;
+}
+
+.wp-service-card-text {
+  height: 15px;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.wp-service-card:hover .wp-service-card-text {
+  height: auto;
+}
+
+.wp-service-card-link {
+  color: var(--wp-secondary-gold);
+}
+
+/* ============================================
+   PROVIDER CARDS (WordPress Hover Style)
+   ============================================ */
+.wp-provider-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.wp-provider-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-content: flex-start;
+}
+
+.wp-provider-card-title {
+  font-family: var(--font-futura-pt-bold);
+  font-weight: 500;
+}
+
+.wp-provider-card-overlay {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
+  transition: all 0.3s ease;
+}
+
+.wp-provider-card:hover .wp-provider-card-overlay {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.wp-provider-card-bio {
+  height: 45px;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.wp-provider-card:hover .wp-provider-card-bio {
+  height: auto;
+}
+
+/* ============================================
+   LOCATION MAPS (WordPress Style)
+   ============================================ */
+.wp-location-map {
+  height: 410px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+}
+
+.wp-location-map iframe {
+  width: 100% !important;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wp-location-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--wp-blue-overlay);
+  padding: 15px;
+  color: var(--wp-white);
+}
+
+.wp-location-icon {
+  font-size: 29px !important;
+  margin-right: 10px;
+}
+
+.wp-location-text {
+  font-family: var(--font-futura-pt-bold);
+  line-height: 30px;
+}
+
+/* ============================================
+   FORMS (WordPress Gravity Forms Style)
+   ============================================ */
+
+/* Apply Now Form (White Background) */
+.wp-apply-form input[type="text"],
+.wp-apply-form input[type="email"],
+.wp-apply-form input[type="tel"],
+.wp-apply-form textarea,
+.wp-apply-form select {
+  font-size: 18px !important;
+  font-family: var(--font-roboto);
+  padding: 10px 0px !important;
+  border: 0px;
+  border-bottom: 2px solid var(--wp-primary-blue);
+  color: var(--wp-text-dark);
+  margin-top: 10px;
+  width: 100%;
+  background: transparent;
+  transition: border-color 0.3s ease;
+}
+
+.wp-apply-form input[type="text"]:hover {
+  border-bottom: 2px solid var(--wp-light-gold);
+}
+
+.wp-apply-form label {
+  font-size: 20px !important;
+  font-family: var(--font-roboto);
+  display: block !important;
+}
+
+.wp-apply-form textarea {
+  min-height: 120px;
+}
+
+.wp-apply-form button[type="submit"] {
+  color: var(--wp-white);
+  background-color: var(--wp-primary-blue);
+  border: 0px;
+  border-radius: 3px;
+  font-size: 20px;
+  padding: 15px 45px;
+  font-family: var(--font-futura-pt-bold);
+  float: right;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.wp-apply-form button[type="submit"]:hover {
+  color: var(--wp-primary-blue);
+  background-color: var(--wp-secondary-gold);
+}
+
+/* Blue Form (Blue Background) */
+.wp-blue-form {
+  background: var(--wp-primary-blue);
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.wp-blue-form label {
+  color: var(--wp-white);
+  font-size: 20px !important;
+  font-family: var(--font-roboto);
+}
+
+.wp-blue-form input,
+.wp-blue-form textarea {
+  width: 100%;
+  padding: 15px 20px !important;
+  font-size: 18px;
+  border: 0px;
+  border-radius: 3px;
+  background: var(--wp-white);
+}
+
+.wp-blue-form textarea {
+  height: 120px !important;
+}
+
+.wp-blue-form button[type="submit"] {
+  padding: 15px 40px;
+  border-radius: 3px;
+  background: transparent;
+  border: 2px solid var(--wp-white);
+  color: var(--wp-white);
+  float: right;
+  font-size: 20px;
+  font-family: var(--font-futura-pt-bold);
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.wp-blue-form button[type="submit"]:hover {
+  color: var(--wp-primary-blue);
+  background-color: var(--wp-secondary-gold);
+  border: 2px solid var(--wp-secondary-gold);
+}
+
+/* Custom Checkbox Styling */
+.wp-checkbox {
+  position: relative;
+  cursor: pointer;
+  font-size: 18px !important;
+  font-family: var(--font-roboto);
+}
+
+.wp-checkbox input[type="checkbox"] {
+  display: none !important;
+}
+
+.wp-checkbox::before {
+  content: '';
+  background-color: transparent;
+  border: 2px solid #0079bf;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+
+.wp-checkbox input[type="checkbox"]:checked + label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  width: 6px;
+  height: 14px;
+  border: solid var(--wp-secondary-gold);
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.wp-checkbox input[type="checkbox"]:checked + label::before {
+  border: 2px solid var(--wp-secondary-gold);
+}
+
+/* ============================================
+   TEAM MEMBERS (WordPress Toggle Style)
+   ============================================ */
+.wp-team-member {
+  border-radius: 8px;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.wp-team-toggle {
+  display: block;
+  height: 18px;
+  line-height: 16px;
+  width: 18px;
+  border: 1px solid var(--wp-primary-blue);
+  position: absolute;
+  right: 15px;
+  top: 45px;
+  text-align: center;
+  background: var(--wp-primary-blue);
+  color: var(--wp-white);
+  border-radius: 50px;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: var(--font-roboto);
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.wp-team-content {
+  display: none;
+  font-family: var(--font-roboto);
+  font-size: 20px !important;
+  line-height: 33px !important;
+  margin: 15px 0px;
+  padding: 20px;
+  background: var(--wp-white);
+}
+
+.wp-team-member.open .wp-team-content {
+  display: block;
+  border: 2px solid var(--wp-primary-blue);
+  border-top: 0px;
+  border-radius: 0 0 8px 8px;
+}
+
+/* ============================================
+   VIDEO SLIDER (WordPress Style)
+   ============================================ */
+.wp-video-slider {
+  position: relative;
+  padding: 0px 50px;
+}
+
+.wp-video-slide {
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+.wp-video-arrow {
+  font-weight: bold;
+  font-size: 45px;
+  color: var(--wp-primary-blue);
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.wp-video-arrow.prev {
+  left: -50px;
+}
+
+.wp-video-arrow.next {
+  right: -50px;
+}
+
+.wp-video-play {
+  font-size: 50px !important;
+  line-height: 50px !important;
+  color: var(--wp-white);
+}
+
+/* ============================================
+   VISIT PROCESS (WordPress Style)
+   ============================================ */
+.wp-visit-process {
+  text-align: center;
+}
+
+.wp-yellow-circle {
+  background: var(--wp-secondary-gold);
+  height: 80px;
+  width: 80px;
+  margin: 0px auto;
+  border-radius: 50%;
+  line-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wp-yellow-circle p {
+  font-family: var(--font-futura-pt-bold);
+  margin: 0;
+}
+
+.wp-download-box {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.17);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* ============================================
+   ACCORDION (WordPress Style)
+   ============================================ */
+.wp-accordion {
+  border: 1px solid #d9d9d9;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.wp-accordion-title {
+  padding: 15px 20px;
+  cursor: pointer;
+  font-family: var(--font-futura-pt-bold);
+  position: relative;
+  background: var(--wp-white);
+}
+
+.wp-accordion-title::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--wp-primary-blue);
+  width: 18px;
+  height: 18px;
+  border-radius: 50px;
+  text-align: center;
+  line-height: 18px;
+  background: var(--wp-primary-blue);
+  color: var(--wp-white);
+  font-size: 12px;
+}
+
+.wp-accordion.open .wp-accordion-title::after {
+  content: "—";
+}
+
+.wp-accordion-content {
+  display: none;
+  padding: 20px;
+  background: var(--wp-white);
+}
+
+.wp-accordion.open .wp-accordion-content {
+  display: block;
+}
+
+.wp-accordion-content a {
+  color: var(--wp-primary-blue);
+  font-size: 18px;
+  font-family: var(--font-roboto);
+  font-weight: bold;
+}
+
+/* ============================================
+   TRACK BLUE SECTION (WordPress Style)
+   ============================================ */
+.wp-track-blue {
+  background: var(--wp-primary-blue);
+  color: var(--wp-white);
+  padding: 60px 20px;
+}
+
+.wp-track-blue h3 {
+  font-size: 30px;
+  font-family: var(--font-futura-pt);
+  font-weight: 500;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN (WordPress Breakpoints)
+   ============================================ */
+
+/* Tablets and up (768px+) */
+@media (min-width: 768px) {
+  .wp-video-slider:hover .wp-video-arrow {
+    opacity: 1;
+  }
+
+  .wp-video-arrow.prev {
+    left: -100px !important;
+  }
+
+  .wp-video-arrow.next {
+    right: -100px !important;
+  }
+}
+
+/* Tablets and below (max 980px) */
+@media (max-width: 980px) {
+  .wp-header-buttons {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between !important;
+    width: 100%;
+  }
+
+  .wp-location-map .wp-location-info {
+    height: 180px !important;
+    padding: 15px !important;
+  }
+
+  .wp-testimonial {
+    padding: 0px 20px;
+  }
+
+  .wp-carousel-button {
+    font-size: 30px !important;
+    width: 30px !important;
+    height: 30px !important;
+  }
+}
+
+/* Mobile (max 767px) */
+@media (max-width: 767px) {
+  body {
+    font-size: 16px;
+  }
+
+  .wp-service-card-text {
+    display: none;
+  }
+
+  .wp-location-map {
+    height: 300px;
+  }
+
+  .wp-location-map .wp-location-info {
+    width: 100% !important;
+    left: 0px;
+    bottom: 0px;
+    padding: 15px !important;
+  }
+
+  .wp-location-icon {
+    font-size: 20px !important;
+  }
+
+  .wp-apply-form button[type="submit"],
+  .wp-blue-form button[type="submit"] {
+    width: 100%;
+    text-align: center;
+  }
+
+  .wp-video-play {
+    font-size: 50px !important;
+  }
+
+  .wp-team-content {
+    font-size: 18px !important;
+    line-height: 28px !important;
+  }
+}
+
+/* Small mobile (max 600px) */
+@media (max-width: 600px) {
+  .wp-header-buttons {
+    flex-direction: column;
+    padding-top: 20px !important;
+  }
+
+  .wp-button {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .wp-location-map .wp-location-info {
+    padding: 10px !important;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+}
+
+/* Extra small mobile (max 420px) */
+@media (max-width: 420px) {
+  .wp-button {
+    font-size: 14px !important;
+    padding: 10px 20px !important;
+  }
+}

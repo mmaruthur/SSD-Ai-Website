@@ -45,22 +45,30 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+
+  /* WordPress Exact Colors - Converted to OKLCH for Tailwind compatibility */
+  --background: oklch(1 0 0); /* White #FFFFFF */
+  --foreground: oklch(0 0 0); /* Black #000000 */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  /* SSD Brand Colors - Primary Blue #0b61c7 */
-  --primary: oklch(0.45 0.15 250);
-  --primary-foreground: oklch(0.985 0 0);
-  /* SSD Brand Colors - Secondary Gold #ffd700 */
-  --secondary: oklch(0.87 0.18 90);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --popover-foreground: oklch(0 0 0);
+
+  /* SSD WordPress Exact Brand Colors */
+  /* Primary Blue #0B61C7 (from WordPress Divi theme) */
+  --primary: oklch(0.47 0.17 255);
+  --primary-foreground: oklch(1 0 0);
+
+  /* Secondary Gold #FFD700 (from WordPress Divi theme) */
+  --secondary: oklch(0.88 0.19 96);
+  --secondary-foreground: oklch(0 0 0);
+
+  /* Light Background #f6f9fd (from WordPress theme) */
+  --muted: oklch(0.978 0.006 240);
+  --muted-foreground: oklch(0.4 0 0); /* Gray #555555 */
+
+  --accent: oklch(0.978 0.006 240);
+  --accent-foreground: oklch(0 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
