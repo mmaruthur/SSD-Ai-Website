@@ -112,7 +112,7 @@ export default async function ProviderDetailPage({
                 </div>
                 <h3 className="text-2xl font-bold mb-6">Certifications</h3>
                 <ul className="space-y-3">
-                  {certifications.map((item, index) => (
+                  {certifications.map((item: string, index: number) => (
                     <li key={index} className="flex gap-3">
                       <span className="text-primary mt-1">•</span>
                       <span className="text-gray-700">{item}</span>
@@ -130,7 +130,7 @@ export default async function ProviderDetailPage({
                 </div>
                 <h3 className="text-2xl font-bold mb-6">Specialties</h3>
                 <ul className="space-y-3">
-                  {areasOfExpertise.map((item, index) => (
+                  {areasOfExpertise.map((item: string, index: number) => (
                     <li key={index} className="flex gap-3">
                       <span className="text-primary mt-1">•</span>
                       <span className="text-gray-700">{item}</span>
